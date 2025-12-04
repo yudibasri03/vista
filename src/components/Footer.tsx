@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-40 h-14 rounded-lg overflow-hidden flex items-center justify-center">
+              <div className="w-80 h-25 rounded-lg overflow-hidden flex items-center justify-center">
                 <img 
                       src="/Vista-Logo_White.png" 
                       alt="Vista Logo" 

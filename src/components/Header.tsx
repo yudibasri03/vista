@@ -23,9 +23,6 @@ export default function Header() {
               alt="Vista Penasihat"
               className="h-8 w-auto md:h-9 lg:h-10 object-contain"
             />
-            <span className="hidden sm:inline text-sm sm:text-base font-semibold text-white leading-tight tracking-wide">
-              VISTAMAJU<br />PENASIHAT BERJANGKA
-            </span>
           </a>
 
           {/* Desktop nav */}

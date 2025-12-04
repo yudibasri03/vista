@@ -1,5 +1,6 @@
+// src/components/Header.tsx
 import { useState } from 'react';
-import { TrendingUp, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -8,62 +9,74 @@ export default function Header() {
     { label: 'Produk', href: '#products' },
     { label: 'Perbandingan', href: '#comparison' },
     { label: 'Testimoni', href: '#testimonials' },
-    { label: 'FAQ', href: '#faq' }
+    { label: 'FAQ', href: '#faq' },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-slate-950/95 backdrop-blur-sm border-b border-slate-800 z-50 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 bg-slate-950 border-b border-slate-800 z-50 shadow-sm md:bg-slate-950/90 md:backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center gap-2">
-              <div className="w-50 h-20 rounded-lg overflow-hidden flex items-center justify-center">
-              <img 
-                src="/Vista-Logo_White.png"
-                alt="Vista Logo"
-                className="h-10 w-auto object-contain"
-              />
-              </div>
-          </div>
+          {/* Logo */}
+          <a href="#top" className="flex items-center gap-3">
+            <img
+              src="/Vista-Logo_White.png"
+              alt="Vista Penasihat"
+              className="h-8 w-auto md:h-9 lg:h-10 object-contain"
+            />
+            <span className="hidden sm:inline text-sm sm:text-base font-semibold text-white leading-tight tracking-wide">
+              VISTAMAJU<br />PENASIHAT BERJANGKA
+            </span>
+          </a>
 
+          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-gray-300 hover:text-amber-400 font-medium transition-colors"
+                className="text-gray-300 hover:text-amber-400 font-medium text-sm transition-colors"
               >
                 {item.label}
               </a>
             ))}
-            <button className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover:shadow-lg">
+            <a
+              href="#products"
+              className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-5 py-2 rounded-lg text-sm transition-all duration-200 hover:shadow-md"
+            >
               Konsultasi Gratis
-            </button>
+            </a>
           </nav>
 
+          {/* Mobile toggle */}
           <button
             className="md:hidden text-gray-300"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => setMobileMenuOpen((o) => !o)}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
+        {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-slate-800">
-            <nav className="flex flex-col gap-4">
+          <div className="md:hidden py-3 border-t border-slate-800">
+            <nav className="flex flex-col gap-3">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-gray-300 hover:text-amber-400 font-medium transition-colors px-2 py-1"
+                  className="text-gray-300 hover:text-amber-400 font-medium text-sm px-1 py-1"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
-              <button className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-6 py-2 rounded-lg transition-all duration-300 mt-2">
+              <a
+                href="#products"
+                className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-5 py-2 rounded-lg text-sm transition-all duration-200 mt-2 text-center"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Konsultasi Gratis
-              </button>
+              </a>
             </nav>
           </div>
         )}

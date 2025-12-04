@@ -7,10 +7,9 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center">
+                <div className="w-60 h-20 bg-amber-500 rounded-lg flex items-center justify-center">
                 <TrendingUp className="w-6 h-6 text-slate-900" />
-              </div>
-              <span className="text-2xl font-bold text-white">Vista</span>
+                </div>
             </div>
             <p className="text-gray-400 leading-relaxed mb-4 max-w-md">
               Ekosistem trading terintegrasi yang membantu Anda belajar, berlatih, dan berkembang dengan pendekatan berbasis data dan risk management.

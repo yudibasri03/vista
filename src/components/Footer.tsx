@@ -10,7 +10,7 @@ export default function Footer() {
               <div className="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center">
                 <TrendingUp className="w-6 h-6 text-slate-900" />
               </div>
-              <span className="text-2xl font-bold text-white">Vista</span>
+              <span className="text-2xl font-bold text-white">Vista Penasihat</span>
             </div>
             <p className="text-gray-400 leading-relaxed mb-4 max-w-md">
               Ekosistem trading terintegrasi yang membantu Anda belajar, berlatih, dan berkembang dengan pendekatan berbasis data dan risk management.
@@ -46,11 +46,11 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <Mail className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
-                <span className="text-sm">info@vista-trading.com</span>
+                <span className="text-sm">info@govista.co.id</span>
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
-                <span className="text-sm">+62 812-3456-7890</span>
+                <span className="text-sm">+62 897-3348-887</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
@@ -63,7 +63,7 @@ export default function Footer() {
         <div className="border-t border-slate-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-500">
-              &copy; 2024 Vista Trading. All rights reserved.
+              &copy; 2024 Vista Penasihat. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <a href="#" className="hover:text-amber-400 transition-colors">Syarat & Ketentuan</a>

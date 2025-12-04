@@ -7,8 +7,12 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center">
-                <TrendingUp className="w-6 h-6 text-slate-900" />
+              <div className="w-12 h-12 rounded-lg overflow-hidden flex items-center justify-center">
+                <img 
+                      src="/Vista-Logo_White.png" 
+                      alt="Vista Logo" 
+                      className="w-full h-full object-contain"
+                />
               </div>
               <span className="text-2xl font-bold text-white">Vista Penasihat</span>
             </div>

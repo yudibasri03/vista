@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <div className="flex items-center mb-4">
               <img 
-                src="/vista-logo.png"
+                src="/Vista-Logo_White.png"
                 alt="Vista Logo"
                 className="h-10 w-auto md:h-12"
               />

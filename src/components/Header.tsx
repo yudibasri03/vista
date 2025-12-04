@@ -16,7 +16,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center gap-2">
-              <div className="w-50 h-25 rounded-lg overflow-hidden flex items-center justify-center">
+              <div className="w-50 h-18 rounded-lg overflow-hidden flex items-center justify-center">
                 <img 
                       src="/Vista-Logo_White.png" 
                       alt="Vista Logo" 

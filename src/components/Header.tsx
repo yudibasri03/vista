@@ -16,10 +16,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center">
-              <TrendingUp className="w-6 h-6 text-slate-900" />
-            </div>
-            <span className="text-2xl font-bold text-white">Vista</span>
+              <div className="w-80 h-25 rounded-lg overflow-hidden flex items-center justify-center">
+                <img 
+                      src="/Vista-Logo_White.png" 
+                      alt="Vista Logo" 
+                      className="w-full h-full object-contain"
+                />
+              </div>
           </div>
 
           <nav className="hidden md:flex items-center gap-8">

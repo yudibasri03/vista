@@ -14,7 +14,6 @@ export default function Footer() {
                       className="w-full h-full object-contain"
                 />
               </div>
-              <span className="text-2xl font-bold text-white">Vista Penasihat</span>
             </div>
             <p className="text-gray-400 leading-relaxed mb-4 max-w-md">
               Ekosistem trading terintegrasi yang membantu Anda belajar, berlatih, dan berkembang dengan pendekatan berbasis data dan risk management.

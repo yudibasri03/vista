@@ -5,39 +5,39 @@ export default function ComparisonTable() {
       target: 'Pemula – Menengah',
       focus: 'Edukasi & pondasi',
       risk: 'Rendah',
-      color: 'bg-blue-50 border-blue-200'
+      color: 'bg-slate-800 border-slate-700'
     },
     {
       product: 'Prop Challenge',
       target: 'Trader yang sudah punya sistem',
       focus: 'Akses modal & scaling',
       risk: 'Menengah',
-      color: 'bg-emerald-50 border-emerald-200'
+      color: 'bg-slate-800 border-slate-700'
     },
     {
       product: 'ATM (Algo)',
       target: 'Sibuk, ingin semi-pasif',
       focus: 'Algo trading & monitoring',
       risk: 'Menengah',
-      color: 'bg-slate-50 border-slate-200'
+      color: 'bg-slate-800 border-slate-700'
     },
     {
       product: 'VIP Membership',
       target: 'Sudah trading, butuh pendampingan harian',
       focus: 'Signal & live trading',
       risk: 'Menengah–Tinggi',
-      color: 'bg-amber-50 border-amber-200'
+      color: 'bg-slate-800 border-slate-700'
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Perbandingan Produk Vista
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Biar pengunjung gampang milih jalur yang tepat
           </p>
         </div>
@@ -56,22 +56,22 @@ export default function ComparisonTable() {
               {data.map((row, index) => (
                 <tr
                   key={index}
-                  className={`${row.color} border-b border-slate-200 hover:shadow-lg transition-shadow duration-200`}
+                  className={`${row.color} border-b border-slate-700 hover:shadow-lg hover:border-amber-400 transition-all duration-200`}
                 >
-                  <td className="px-6 py-5 font-bold text-slate-900 border-r border-slate-200">
+                  <td className="px-6 py-5 font-bold text-white border-r border-slate-700">
                     {row.product}
                   </td>
-                  <td className="px-6 py-5 text-slate-700 border-r border-slate-200">
+                  <td className="px-6 py-5 text-gray-300 border-r border-slate-700">
                     {row.target}
                   </td>
-                  <td className="px-6 py-5 text-slate-700 border-r border-slate-200">
+                  <td className="px-6 py-5 text-gray-300 border-r border-slate-700">
                     {row.focus}
                   </td>
                   <td className="px-6 py-5">
                     <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
-                      row.risk === 'Rendah' ? 'bg-green-100 text-green-800' :
-                      row.risk === 'Menengah' ? 'bg-yellow-100 text-yellow-800' :
-                      'bg-orange-100 text-orange-800'
+                      row.risk === 'Rendah' ? 'bg-green-500/20 text-green-400' :
+                      row.risk === 'Menengah' ? 'bg-amber-500/20 text-amber-400' :
+                      'bg-orange-500/20 text-orange-400'
                     }`}>
                       {row.risk}
                     </span>
@@ -85,22 +85,22 @@ export default function ComparisonTable() {
         <div className="mt-8 lg:hidden">
           {data.map((row, index) => (
             <div key={index} className={`${row.color} border rounded-xl p-6 mb-4`}>
-              <h3 className="font-bold text-lg text-slate-900 mb-3">{row.product}</h3>
+              <h3 className="font-bold text-lg text-white mb-3">{row.product}</h3>
               <div className="space-y-2 text-sm">
                 <div>
-                  <span className="font-semibold text-slate-700">Cocok untuk: </span>
-                  <span className="text-slate-600">{row.target}</span>
+                  <span className="font-semibold text-gray-200">Cocok untuk: </span>
+                  <span className="text-gray-300">{row.target}</span>
                 </div>
                 <div>
-                  <span className="font-semibold text-slate-700">Fokus: </span>
-                  <span className="text-slate-600">{row.focus}</span>
+                  <span className="font-semibold text-gray-200">Fokus: </span>
+                  <span className="text-gray-300">{row.focus}</span>
                 </div>
                 <div>
-                  <span className="font-semibold text-slate-700">Risiko: </span>
+                  <span className="font-semibold text-gray-200">Risiko: </span>
                   <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-                    row.risk === 'Rendah' ? 'bg-green-100 text-green-800' :
-                    row.risk === 'Menengah' ? 'bg-yellow-100 text-yellow-800' :
-                    'bg-orange-100 text-orange-800'
+                    row.risk === 'Rendah' ? 'bg-green-500/20 text-green-400' :
+                    row.risk === 'Menengah' ? 'bg-amber-500/20 text-amber-400' :
+                    'bg-orange-500/20 text-orange-400'
                   }`}>
                     {row.risk}
                   </span>

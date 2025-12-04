@@ -29,13 +29,13 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
+    <section className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Cerita Singkat dari Komunitas Vista
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Ribuan trader telah berkembang bersama ekosistem Vista
           </p>
         </div>
@@ -44,23 +44,23 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:shadow-xl transition-shadow duration-300"
+              className="bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-700 hover:shadow-xl hover:border-amber-400 transition-all duration-300"
             >
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Quote className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Quote className="w-6 h-6 text-slate-900" />
                 </div>
-                <p className="text-lg text-slate-700 leading-relaxed italic">
+                <p className="text-lg text-gray-300 leading-relaxed italic">
                   "{testimonial.text}"
                 </p>
               </div>
-              <div className="border-t border-slate-200 pt-4 flex items-center justify-between">
+              <div className="border-t border-slate-700 pt-4 flex items-center justify-between">
                 <div>
-                  <p className="font-semibold text-slate-900">{testimonial.author}</p>
-                  <p className="text-sm text-slate-500">{testimonial.location}</p>
+                  <p className="font-semibold text-white">{testimonial.author}</p>
+                  <p className="text-sm text-gray-400">{testimonial.location}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-sm font-medium text-blue-600">{testimonial.role}</p>
+                  <p className="text-sm font-medium text-amber-400">{testimonial.role}</p>
                 </div>
               </div>
             </div>

@@ -23,11 +23,11 @@ export default function ProductCard({
   features,
   ctaPrimary,
   ctaSecondary,
-  bgGradient = 'from-blue-600 to-cyan-600',
-  iconColor = 'text-blue-500'
+  bgGradient = 'from-amber-600 to-amber-500',
+  iconColor = 'text-amber-500'
 }: ProductCardProps) {
   return (
-    <div className="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+    <div className="bg-slate-800 rounded-3xl shadow-xl border border-slate-700 overflow-hidden hover:shadow-2xl hover:border-amber-400 transition-all duration-300">
       <div className={`bg-gradient-to-r ${bgGradient} p-8 text-white`}>
         <div className="flex items-center gap-4 mb-4">
           <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
@@ -43,17 +43,17 @@ export default function ProductCard({
       </div>
 
       <div className="p-8">
-        <p className="text-lg text-slate-700 leading-relaxed mb-6">
+        <p className="text-lg text-gray-300 leading-relaxed mb-6">
           {description}
         </p>
 
         <div className="mb-6">
-          <h4 className="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-3">
+          <h4 className="text-sm font-semibold text-white uppercase tracking-wide mb-3">
             Cocok untuk siapa:
           </h4>
           <ul className="space-y-2">
             {targetAudience.map((item, index) => (
-              <li key={index} className="flex items-start gap-2 text-slate-600">
+              <li key={index} className="flex items-start gap-2 text-gray-300">
                 <span className={`${iconColor} mt-1`}>•</span>
                 <span>{item}</span>
               </li>
@@ -62,12 +62,12 @@ export default function ProductCard({
         </div>
 
         <div className="mb-8">
-          <h4 className="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-3">
+          <h4 className="text-sm font-semibold text-white uppercase tracking-wide mb-3">
             Highlight Fitur:
           </h4>
           <ul className="space-y-2">
             {features.map((feature, index) => (
-              <li key={index} className="flex items-start gap-2 text-slate-600">
+              <li key={index} className="flex items-start gap-2 text-gray-300">
                 <span className={`${iconColor} mt-1`}>✓</span>
                 <span>{feature}</span>
               </li>
@@ -76,12 +76,12 @@ export default function ProductCard({
         </div>
 
         <div className="flex flex-col gap-3">
-          <button className={`group bg-gradient-to-r ${bgGradient} text-white font-semibold px-6 py-3 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2`}>
+          <button className={`group bg-gradient-to-r ${bgGradient} text-slate-900 font-semibold px-6 py-3 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2`}>
             {ctaPrimary}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
           {ctaSecondary && (
-            <button className="text-slate-600 font-medium px-6 py-3 rounded-xl border border-slate-300 hover:border-slate-400 hover:bg-slate-50 transition-all duration-300">
+            <button className="text-amber-400 font-medium px-6 py-3 rounded-xl border border-slate-600 hover:border-amber-400 hover:bg-slate-700 transition-all duration-300">
               {ctaSecondary}
             </button>
           )}

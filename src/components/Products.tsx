@@ -21,8 +21,8 @@ export default function Products() {
       ],
       ctaPrimary: 'Lihat Kurikulum Vista Academy',
       ctaSecondary: 'Tanya Tim Vista',
-      bgGradient: 'from-blue-600 to-cyan-600',
-      iconColor: 'text-blue-500'
+      bgGradient: 'from-amber-600 to-amber-500',
+      iconColor: 'text-amber-500'
     },
     {
       icon: TrendingUp,
@@ -43,8 +43,8 @@ export default function Products() {
       ],
       ctaPrimary: 'Daftar Prop Challenge Vista',
       ctaSecondary: 'Konsultasi Prop Challenge',
-      bgGradient: 'from-emerald-600 to-teal-600',
-      iconColor: 'text-emerald-500'
+      bgGradient: 'from-amber-600 to-amber-500',
+      iconColor: 'text-amber-500'
     },
     {
       icon: Cpu,
@@ -64,8 +64,8 @@ export default function Products() {
       ],
       ctaPrimary: 'Pelajari Cara Kerja ATM',
       ctaSecondary: 'Jadwalkan Demo ATM',
-      bgGradient: 'from-slate-700 to-slate-900',
-      iconColor: 'text-slate-600'
+      bgGradient: 'from-amber-600 to-amber-500',
+      iconColor: 'text-amber-500'
     },
     {
       icon: Star,
@@ -91,13 +91,13 @@ export default function Products() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
+    <section className="py-20 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Pilih Jalur yang Cocok dengan Anda
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Setiap produk dirancang untuk level dan kebutuhan yang berbeda. Pilih yang paling sesuai dengan kondisi Anda saat ini.
           </p>
         </div>
@@ -108,9 +108,9 @@ export default function Products() {
           ))}
         </div>
 
-        <div className="mt-12 p-8 bg-amber-50 border-l-4 border-amber-500 rounded-lg">
-          <p className="text-slate-700 leading-relaxed">
-            <span className="font-semibold text-slate-900">Catatan Penting:</span> Algo trading bukan mesin uang instan. Tetap ada risiko. Fokus kami adalah sistem yang terukur dan transparan. Slot VIP Membership dibatasi agar komunitas tetap kondusif.
+        <div className="mt-12 p-8 bg-slate-800 border-l-4 border-amber-500 rounded-lg">
+          <p className="text-gray-300 leading-relaxed">
+            <span className="font-semibold text-white">Catatan Penting:</span> Algo trading bukan mesin uang instan. Tetap ada risiko. Fokus kami adalah sistem yang terukur dan transparan. Slot VIP Membership dibatasi agar komunitas tetap kondusif.
           </p>
         </div>
       </div>

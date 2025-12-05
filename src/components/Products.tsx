@@ -512,8 +512,9 @@ export default function Products() {
                   </h4>
                   <Row label="Tanggal Peluncuran" value="Jan 2023" />
                   <Row label="Frekuensi Berlangganan" value="Per 3 Bulan" />
+                  <Row label="Biaya Berlangganan" value="USD 60" />
                   <Row label="Biaya Manajemen" value="Gratis" />
-                  <Row label="Biaya Kinerja" value="Berbasis profit" />
+                  <Row label="Biaya Kinerja" value="25%" />
                   <Row label="Penarikan Profit" value="Bulanan" />
                   <Row label="Biaya Penarikan" value="Gratis" />
                   <Row label="Master Copy Portofolio" value="GOLD-ATM" />
@@ -535,16 +536,16 @@ export default function Products() {
                   />
                   <Row
                     label="Pengembalian Tahunan (compound)"
-                    value="30.8%"
+                    value="33.8%"
                     valueClass="text-green-400"
                   />
                   <Row
                     label="Pengembalian Bulanan Rata-rata"
-                    value="7.6%"
+                    value="7.68%"
                     valueClass="text-green-400"
                   />
-                  <Row label="Bulan Terbaik" value="17.17%" valueClass="text-green-400" />
-                  <Row label="Bulan Terburuk" value="-8.1%" valueClass="text-red-400" />
+                  <Row label="Bulan Terbaik" value="22.3%" valueClass="text-green-400" />
+                  <Row label="Bulan Terburuk" value="-16.2%" valueClass="text-red-400" />
                   <p className="text-[10px] text-gray-500 mt-2">
                     Angka di atas bersifat ilustratif berdasarkan track record internal dan dapat
                     berubah seiring waktu. Kinerja historis tidak menjamin kinerja di masa depan.
@@ -618,9 +619,9 @@ export default function Products() {
                           '3,67%',
                           '9,28%',
                           '17,17%',
+                          '-16,2%',
                           '–',
-                          '–',
-                          '74,45%',
+                          '58,25%',
                         ].map((v, i) => (
                           <td
                             key={i}

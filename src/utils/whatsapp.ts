@@ -1,4 +1,4 @@
-export const WHATSAPP_NUMBER = '6289733488887';
+export const WHATSAPP_NUMBER = '628973348887';
 
 export const WHATSAPP_MESSAGES = {
   KONSULTASI_GRATIS: 'Halo Tim Vista, Saya tertarik untuk Konsultasi Gratis dan informasi produk Vista.',

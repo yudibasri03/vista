@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
@@ -12,9 +11,9 @@ export default {
           '100%': { transform: 'scaleX(1)' },
         },
         dotPulse: {
-          '0%': { transform: 'scale(1)', opacity: 0.7 },
+          '0%': { transform: 'scale(1)', opacity: 0.8 },
           '50%': { transform: 'scale(1.25)', opacity: 1 },
-          '100%': { transform: 'scale(1)', opacity: 0.7 },
+          '100%': { transform: 'scale(1)', opacity: 0.8 },
         },
       },
       animation: {

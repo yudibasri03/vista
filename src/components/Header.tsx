@@ -7,7 +7,7 @@ export default function Header() {
 
   const navItems = [
     { label: 'Produk', href: '#products' },
-    { label: 'Pilih Perjalanan-mu', href: '#comparison' },
+    { label: 'Pilih Perjalanan-mu', href: '#journeys' },
     { label: 'Testimoni', href: '#testimonials' },
     { label: 'FAQ', href: '#faq' }
   ];

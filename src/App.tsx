@@ -21,7 +21,7 @@ function App() {
         </div>
 
         {/* Section perbandingan diganti menjadi Journey Roadmap */}
-        <div id="comparison">
+        <div id="journeys">
           <Roadmap />
         </div>
 

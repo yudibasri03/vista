@@ -74,19 +74,36 @@ export default function ProductCard(props: ProductCardProps) {
       </div>
 
       <div className="mt-auto pt-4 flex flex-col sm:flex-row gap-3">
-        <button
-          type="button"
-          onClick={onPrimaryClick}
-          className={`
-            inline-flex justify-center items-center 
-            px-4 py-2.5 rounded-lg text-xs sm:text-sm font-semibold
-            bg-gradient-to-r ${bgGradient}
-            text-slate-950
-            hover:opacity-90 transition
-          `}
-        >
-          {ctaPrimary}
-        </button>
+        {onPrimaryClick ? (
+          <button
+            type="button"
+            onClick={onPrimaryClick}
+            className={`
+              inline-flex justify-center items-center
+              px-4 py-2.5 rounded-lg text-xs sm:text-sm font-semibold
+              bg-gradient-to-r ${bgGradient}
+              text-slate-950
+              hover:opacity-90 transition
+            `}
+          >
+            {ctaPrimary}
+          </button>
+        ) : (
+          <a
+            href="https://wa.me/6289733488887"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`
+              inline-flex justify-center items-center
+              px-4 py-2.5 rounded-lg text-xs sm:text-sm font-semibold
+              bg-gradient-to-r ${bgGradient}
+              text-slate-950
+              hover:opacity-90 transition
+            `}
+          >
+            {ctaPrimary}
+          </a>
+        )}
 
         {ctaSecondary && (
           <a

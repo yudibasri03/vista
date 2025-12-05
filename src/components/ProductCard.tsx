@@ -38,7 +38,7 @@ export default function ProductCard(props: ProductCardProps) {
     <article className="group relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-sm rounded-2xl border border-slate-700/50 hover:border-amber-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/20 hover:-translate-y-1 p-6 sm:p-7 flex flex-col h-full overflow-hidden">
       <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-500/10 to-transparent rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-      <div className="relative">
+      <div className="relative flex-1 flex flex-col">
         <div className="flex items-center gap-3 mb-5">
           <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${bgGradient} flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
             <Icon className="w-7 h-7 text-white" />
@@ -88,40 +88,40 @@ export default function ProductCard(props: ProductCardProps) {
             </ul>
           </div>
         </div>
+      </div>
 
-        <div className="mt-auto pt-4 flex flex-col sm:flex-row gap-3">
-          {onPrimaryClick ? (
-            <button
-              type="button"
-              onClick={onPrimaryClick}
-              className={`relative inline-flex justify-center items-center px-5 py-3 rounded-xl text-sm font-bold bg-gradient-to-r ${bgGradient} text-white hover:scale-105 transition-all duration-300 shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/40 overflow-hidden group/btn`}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-700"></div>
-              <span className="relative">{ctaPrimary}</span>
-            </button>
-          ) : (
-            <a
-              href={primaryWhatsAppLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`relative inline-flex justify-center items-center px-5 py-3 rounded-xl text-sm font-bold bg-gradient-to-r ${bgGradient} text-white hover:scale-105 transition-all duration-300 shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/40 overflow-hidden group/btn`}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-700"></div>
-              <span className="relative">{ctaPrimary}</span>
-            </a>
-          )}
+      <div className="relative pt-4 flex flex-col sm:flex-row gap-3 mt-auto">
+        {onPrimaryClick ? (
+          <button
+            type="button"
+            onClick={onPrimaryClick}
+            className={`relative inline-flex justify-center items-center px-5 py-3 rounded-xl text-sm font-bold bg-gradient-to-r ${bgGradient} text-white hover:scale-105 transition-all duration-300 shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/40 overflow-hidden group/btn`}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-700"></div>
+            <span className="relative">{ctaPrimary}</span>
+          </button>
+        ) : (
+          <a
+            href={primaryWhatsAppLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`relative inline-flex justify-center items-center px-5 py-3 rounded-xl text-sm font-bold bg-gradient-to-r ${bgGradient} text-white hover:scale-105 transition-all duration-300 shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/40 overflow-hidden group/btn`}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-700"></div>
+            <span className="relative">{ctaPrimary}</span>
+          </a>
+        )}
 
-          {ctaSecondary && (
-            <a
-              href={secondaryWhatsAppLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex justify-center items-center px-5 py-3 rounded-xl text-sm font-semibold border-2 border-slate-700 text-gray-200 hover:border-amber-500 hover:text-amber-400 hover:bg-amber-500/5 transition-all duration-300"
-            >
-              {ctaSecondary}
-            </a>
-          )}
-        </div>
+        {ctaSecondary && (
+          <a
+            href={secondaryWhatsAppLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex justify-center items-center px-5 py-3 rounded-xl text-sm font-semibold border-2 border-slate-700 text-gray-200 hover:border-amber-500 hover:text-amber-400 hover:bg-amber-500/5 transition-all duration-300"
+          >
+            {ctaSecondary}
+          </a>
+        )}
       </div>
     </article>
   );

@@ -60,69 +60,66 @@ export default function Roadmap() {
   ];
 
   const HorizontalTimeline = ({
-    journey,
-    label,
-    isTraders,
-  }: {
-    journey: typeof tradersJourney;
-    label: string;
-    isTraders: boolean;
-  }) => (
-    <div className="mb-24">
-      <div className="flex items-start gap-8">
-        {/* LABEL DI KIRI */}
-        <div className="flex-shrink-0 w-32 pt-6 text-right">
-          <h3 className="text-3xl font-bold text-white">{label}</h3>
-        </div>
+  journey,
+  label,
+  isTraders,
+}: {
+  journey: typeof tradersJourney;
+  label: string;
+  isTraders: boolean;
+}) => (
+  <div className="mb-24">
+    <div className="flex items-center gap-8">
+      {/* LABEL DI KIRI – sekarang sejajar garis */}
+      <div className="flex-shrink-0 w-32 text-right">
+        <h3 className="text-3xl font-bold text-white">{label}</h3>
+      </div>
 
-        {/* TIMELINE DI KANAN */}
-        <div className="flex-1 relative">
-          {/* Garis animasi */}
-          <div
-            className={`absolute top-1/2 left-0 right-0 h-1 -translate-y-1/2 rounded-full origin-left animate-line-grow ${
-              isTraders
-                ? "bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400"
-                : "bg-gradient-to-r from-amber-400 via-orange-400 to-pink-400"
-            }`}
-          />
+      {/* TIMELINE DI KANAN */}
+      <div className="flex-1 relative">
+        {/* Garis animasi */}
+        <div
+          className={`absolute top-1/2 left-0 right-0 h-1 -translate-y-1/2 rounded-full origin-left animate-line-grow ${
+            isTraders
+              ? "bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400"
+              : "bg-gradient-to-r from-amber-400 via-orange-400 to-pink-400"
+          }`}
+        />
 
-          {/* Checkpoints */}
-          <div className="relative flex justify-between px-2">
-            {journey.map((checkpoint) => (
-              <div
-                key={checkpoint.id}
-                className="flex flex-col items-center w-1/3 text-center"
-              >
-                {/* Title & paragraph dengan tinggi fix agar dot sejajar */}
-                <div className="mb-10 min-h-[80px] flex flex-col justify-end">
-                  <h4 className="text-sm font-semibold text-gray-200 mb-1">
-                    {checkpoint.title}
-                  </h4>
-                  <p className="text-xs text-gray-400 leading-relaxed px-2">
-                    {checkpoint.text}
-                  </p>
-                </div>
-
-                {/* Dot dengan pulse */}
-                <div
-                  className={`w-6 h-6 ${checkpoint.dotColor} rounded-full shadow-lg ${checkpoint.dotShadow} ring-4 ring-slate-950 animate-dot-pulse`}
-                />
-
-                {/* Number */}
-                <div className="mt-3">
-                  <span
-                    className={`text-xs font-bold tracking-wider ${checkpoint.textColor}`}
-                  >
-                    {checkpoint.date}
-                  </span>
-                </div>
+        {/* Checkpoints */}
+        <div className="relative flex justify-between px-2">
+          {journey.map((checkpoint) => (
+            <div
+              key={checkpoint.id}
+              className="flex flex-col items-center w-1/3 text-center"
+            >
+              <div className="mb-10 min-h-[80px] flex flex-col justify-end">
+                <h4 className="text-sm font-semibold text-gray-200 mb-1">
+                  {checkpoint.title}
+                </h4>
+                <p className="text-xs text-gray-400 leading-relaxed px-2">
+                  {checkpoint.text}
+                </p>
               </div>
-            ))}
-          </div>
+
+              <div
+                className={`w-6 h-6 ${checkpoint.dotColor} rounded-full shadow-lg ${checkpoint.dotShadow} ring-4 ring-slate-950 animate-dot-pulse`}
+              />
+
+              <div className="mt-3">
+                <span
+                  className={`text-xs font-bold tracking-wider ${checkpoint.textColor}`}
+                >
+                  {checkpoint.date}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
-  );
+  </div>
+);
 
   return (
     <section className="py-24 bg-gradient-to-b from-slate-950 via-slate-900/40 to-slate-950 text-white relative overflow-hidden">

@@ -122,17 +122,25 @@ export default function Roadmap() {
 );
 
   return (
-    <section className="py-24 bg-gradient-to-b from-slate-950 via-slate-900/40 to-slate-950 text-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header utama */}
+    <section className="relative py-24 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
+      <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
+
+      <div className="absolute top-1/4 left-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl"></div>
+
+      <div className="relative max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+          <div className="inline-block bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 mb-6">
+            <span className="text-sm font-semibold text-amber-400">Perjalanan Anda</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight">
             Tentukan Perjalanan Finansial dan Pilih ingin jadi seperti apa kamu nantinya
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-base leading-relaxed">
+          <p className="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
             Dua perjalanan, satu tujuan: berkembang. Tentukan apakah Anda ingin membangun skill
             untuk menjadi trader profesional, atau mengembangkan portofolio sebagai investor cerdas.
           </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto mt-6"></div>
         </div>
 
         {/* Trader Journey */}
@@ -149,10 +157,6 @@ export default function Roadmap() {
           isTraders={false}
         />
       </div>
-
-      {/* Dekorasi background */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
     </section>
   );
 }

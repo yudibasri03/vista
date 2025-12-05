@@ -13,34 +13,41 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-slate-950/95 backdrop-blur-sm border-b border-slate-800 z-50 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 bg-slate-950/95 backdrop-blur-md border-b border-slate-800/50 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center gap-3">
-          <img 
-            src="/Vista-Logo_White.png"
-            alt="Vista Logo"
-            className="h-8 w-auto md:h-9 lg:h-10 object-contain"
-          />
-      </div>
+            <img
+              src="/Vista-Logo_White.png"
+              alt="Vista Logo"
+              className="h-8 w-auto md:h-9 lg:h-10 object-contain hover:scale-105 transition-transform duration-300"
+            />
+          </div>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-gray-300 hover:text-amber-400 font-medium transition-colors"
+                className="relative text-gray-300 hover:text-amber-400 font-semibold transition-colors duration-300 group"
               >
                 {item.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-400 to-amber-600 group-hover:w-full transition-all duration-300"></span>
               </a>
             ))}
-            <a href={createWhatsAppLink(WHATSAPP_MESSAGES.KONSULTASI_GRATIS)} target="_blank" rel="noopener noreferrer" className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover:shadow-lg">
-              Konsultasi Gratis
+            <a
+              href={createWhatsAppLink(WHATSAPP_MESSAGES.KONSULTASI_GRATIS)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold px-6 py-2.5 rounded-xl transition-all duration-300 shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/40 hover:scale-105 overflow-hidden group"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+              <span className="relative">Konsultasi Gratis</span>
             </a>
           </nav>
 
           <button
-            className="md:hidden text-gray-300"
+            className="md:hidden text-gray-300 hover:text-amber-400 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -48,19 +55,24 @@ export default function Header() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-slate-800">
-            <nav className="flex flex-col gap-4">
+          <div className="md:hidden py-4 border-t border-slate-800/50 bg-slate-950/95 backdrop-blur-md">
+            <nav className="flex flex-col gap-3">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-gray-300 hover:text-amber-400 font-medium transition-colors px-2 py-1"
+                  className="text-gray-300 hover:text-amber-400 font-semibold transition-colors px-3 py-2 rounded-lg hover:bg-slate-800/50"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
-              <a href={createWhatsAppLink(WHATSAPP_MESSAGES.KONSULTASI_GRATIS)} target="_blank" rel="noopener noreferrer" className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-6 py-2 rounded-lg transition-all duration-300 mt-2 text-center">
+              <a
+                href={createWhatsAppLink(WHATSAPP_MESSAGES.KONSULTASI_GRATIS)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-6 py-3 rounded-xl transition-all duration-300 mt-2 text-center shadow-lg shadow-amber-500/25"
+              >
                 Konsultasi Gratis
               </a>
             </nav>

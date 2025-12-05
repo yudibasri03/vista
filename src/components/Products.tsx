@@ -123,16 +123,25 @@ export default function Products() {
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-slate-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+    <section className="relative py-20 sm:py-24 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
+      <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
+
+      <div className="absolute top-1/4 right-10 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 left-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <div className="inline-block bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 mb-6">
+            <span className="text-sm font-semibold text-amber-400">Produk Kami</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4">
             Pilih Jalur yang Cocok dengan Anda
           </h2>
-          <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Setiap produk dirancang untuk level dan kebutuhan yang berbeda. Pilih yang paling
             sesuai dengan kondisi Anda saat ini.
           </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto mt-6"></div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
@@ -153,9 +162,9 @@ export default function Products() {
           ))}
         </div>
 
-        <div className="mt-10 sm:mt-12 p-6 sm:p-8 bg-slate-800/90 border-l-4 border-amber-500 rounded-lg">
-          <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-            <span className="font-semibold text-white">Catatan Penting:</span> Algo trading bukan
+        <div className="mt-12 p-6 sm:p-8 bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-sm border-l-4 border-amber-500 rounded-2xl shadow-xl">
+          <p className="text-gray-200 leading-relaxed text-sm sm:text-base">
+            <span className="font-bold text-amber-400">Catatan Penting:</span> Algo trading bukan
             mesin uang instan. Tetap ada risiko. Fokus kami adalah sistem yang terukur dan
             transparan. Slot VIP Membership dibatasi agar komunitas tetap kondusif.
           </p>

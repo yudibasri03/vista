@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, HelpCircle } from 'lucide-react';
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -36,43 +36,50 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-20 bg-slate-950">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-24 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
+      <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
+
+      <div className="absolute top-1/3 right-10 w-72 h-72 bg-amber-500/5 rounded-full blur-3xl"></div>
+
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 mb-6">
+            <HelpCircle className="w-4 h-4 text-amber-400" />
+            <span className="text-sm font-semibold text-amber-400">FAQ</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4">
             Pertanyaan yang Sering Diajukan
           </h2>
           <p className="text-xl text-gray-300">
             Temukan jawaban untuk pertanyaan umum tentang Vista
           </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto mt-6"></div>
         </div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border border-slate-700 rounded-xl overflow-hidden bg-slate-800 shadow-sm hover:shadow-md hover:border-amber-400 transition-all duration-200"
+              className="group relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-700/50 hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-slate-700 transition-colors duration-200"
+                className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 transition-colors duration-200"
               >
-                <span className="font-semibold text-lg text-white">
+                <span className="font-bold text-lg text-white group-hover:text-amber-400 transition-colors">
                   {faq.question}
                 </span>
-                <ChevronDown
-                  className={`w-6 h-6 text-amber-400 flex-shrink-0 transition-transform duration-300 ${
-                    openIndex === index ? 'rotate-180' : ''
-                  }`}
-                />
+                <div className={`w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-amber-500/25 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}>
+                  <ChevronDown className="w-5 h-5 text-white" />
+                </div>
               </button>
               <div
                 className={`overflow-hidden transition-all duration-300 ${
                   openIndex === index ? 'max-h-96' : 'max-h-0'
                 }`}
               >
-                <div className="px-6 pb-5 text-gray-300 leading-relaxed">
-                  {faq.answer}
+                <div className="px-6 pb-5 text-gray-300 leading-relaxed border-t border-slate-700/50">
+                  <div className="pt-4">{faq.answer}</div>
                 </div>
               </div>
             </div>

@@ -5,6 +5,7 @@ import { GraduationCap, TrendingUp, Cpu, Star, X } from 'lucide-react';
 
 export default function Products() {
   const [showAcademyModal, setShowAcademyModal] = useState(false);
+  const [showPropModal, setShowPropModal] = useState(false);
 
   const products = [
     {
@@ -47,7 +48,8 @@ export default function Products() {
         'Dashboard monitoring hasil trading',
         'Support tim Vista jika ada kendala teknis',
       ],
-      ctaPrimary: 'Daftar Prop Challenge Vista',
+      // CTA diganti:
+      ctaPrimary: 'Cara Kerja Program Tantangan',
       ctaSecondary: 'Konsultasi Prop Challenge',
       bgGradient: 'from-amber-600 to-amber-500',
       iconColor: 'text-amber-500',
@@ -116,8 +118,13 @@ export default function Products() {
             <ProductCard
               key={index}
               {...product}
-              // Hanya card pertama (Vista Academy) yang buka modal kurikulum
-              onPrimaryClick={index === 0 ? () => setShowAcademyModal(true) : undefined}
+              onPrimaryClick={
+                index === 0
+                  ? () => setShowAcademyModal(true)
+                  : index === 1
+                  ? () => setShowPropModal(true)
+                  : undefined
+              }
             />
           ))}
         </div>
@@ -131,11 +138,10 @@ export default function Products() {
         </div>
       </div>
 
-      {/* MODAL KURIKULUM VISTA ACADEMY */}
+      {/* MODAL VISTA ACADEMY */}
       {showAcademyModal && (
         <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/60 px-4">
           <div className="max-w-4xl w-full bg-slate-950 rounded-2xl border border-slate-700 shadow-xl overflow-hidden">
-            {/* Header modal */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-900/80">
               <div>
                 <p className="text-xs font-semibold text-amber-400 uppercase tracking-wide">
@@ -154,9 +160,8 @@ export default function Products() {
               </button>
             </div>
 
-            {/* Isi modal: dua paket */}
             <div className="px-6 py-5 sm:py-6 space-y-5 sm:space-y-0 sm:grid sm:grid-cols-2 gap-4">
-              {/* Paket Intermediate */}
+              {/* Intermediate */}
               <div className="rounded-xl border border-slate-800 bg-gradient-to-b from-red-900/60 to-slate-950 p-4 sm:p-5">
                 <h4 className="text-sm font-semibold text-red-300 uppercase tracking-wide mb-1">
                   Paket Intermediate
@@ -191,7 +196,7 @@ export default function Products() {
                 </div>
               </div>
 
-              {/* Paket Elite */}
+              {/* Elite */}
               <div className="rounded-xl border border-slate-800 bg-gradient-to-b from-amber-700/70 to-slate-950 p-4 sm:p-5">
                 <h4 className="text-sm font-semibold text-amber-300 uppercase tracking-wide mb-1">
                   Paket Elite
@@ -228,7 +233,6 @@ export default function Products() {
               </div>
             </div>
 
-            {/* CTA bawah modal */}
             <div className="px-6 pb-4 sm:pb-5 flex flex-col sm:flex-row gap-3 border-t border-slate-800 bg-slate-900/60">
               <button
                 type="button"
@@ -239,6 +243,177 @@ export default function Products() {
               <button
                 type="button"
                 onClick={() => setShowAcademyModal(false)}
+                className="w-full sm:w-auto px-5 py-2.5 rounded-lg border border-slate-700 text-gray-200 text-sm hover:border-amber-400 hover:text-amber-300 transition"
+              >
+                Tutup
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* MODAL PROGRAM TANTANGAN (TRADING RULES) */}
+      {showPropModal && (
+        <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/60 px-4">
+          <div className="max-w-5xl w-full bg-slate-950 rounded-2xl border border-slate-700 shadow-xl overflow-hidden">
+            {/* Header */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-900/80">
+              <div>
+                <p className="text-xs font-semibold text-amber-400 uppercase tracking-wide">
+                  Program Tantangan Vista
+                </p>
+                <h3 className="text-lg sm:text-xl font-bold text-white">
+                  Cara Kerja 1-Step & 2-Step Challenge
+                </h3>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowPropModal(false)}
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Trading Rules */}
+            <div className="px-6 py-5 sm:py-6">
+              <h4 className="text-center text-sm sm:text-base font-semibold text-amber-300 tracking-wide mb-4">
+                TRADING RULES
+              </h4>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                {/* 1-Step */}
+                <div className="rounded-xl border border-amber-500/70 bg-slate-900/60">
+                  <div className="px-4 py-3 border-b border-amber-500/60 text-center">
+                    <p className="text-xs font-semibold text-amber-300 uppercase tracking-wide">
+                      1-Step Challenge
+                    </p>
+                    <p className="text-[11px] text-gray-300">
+                      Assessment 1 → Funded
+                    </p>
+                  </div>
+                  <table className="w-full text-xs sm:text-sm text-gray-200">
+                    <thead>
+                      <tr className="text-amber-300">
+                        <th className="py-2 px-3 text-left">Rules</th>
+                        <th className="py-2 px-3 text-left">Assessment 1</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="py-1.5 px-3">Profit Target</td>
+                        <td className="py-1.5 px-3">8%</td>
+                      </tr>
+                      <tr className="bg-slate-900/40">
+                        <td className="py-1.5 px-3">Daily Loss Limit</td>
+                        <td className="py-1.5 px-3">5%</td>
+                      </tr>
+                      <tr>
+                        <td className="py-1.5 px-3">Max Drawdown</td>
+                        <td className="py-1.5 px-3">8%</td>
+                      </tr>
+                      <tr className="bg-slate-900/40">
+                        <td className="py-1.5 px-3">Inactivity Period</td>
+                        <td className="py-1.5 px-3">30 Days</td>
+                      </tr>
+                      <tr>
+                        <td className="py-1.5 px-3">Leverage</td>
+                        <td className="py-1.5 px-3">1:50</td>
+                      </tr>
+                      <tr className="bg-slate-900/40">
+                        <td className="py-1.5 px-3">Max Time</td>
+                        <td className="py-1.5 px-3">No limit</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* 2-Step */}
+                <div className="rounded-xl border border-amber-500/70 bg-slate-900/60">
+                  <div className="px-4 py-3 border-b border-amber-500/60 text-center">
+                    <p className="text-xs font-semibold text-amber-300 uppercase tracking-wide">
+                      2-Step Challenge
+                    </p>
+                    <p className="text-[11px] text-gray-300">
+                      Assessment 1 → Assessment 2 → Funded
+                    </p>
+                  </div>
+                  <table className="w-full text-xs sm:text-sm text-gray-200">
+                    <thead>
+                      <tr className="text-amber-300">
+                        <th className="py-2 px-3 text-left">Rules</th>
+                        <th className="py-2 px-3 text-left">Assessment 1</th>
+                        <th className="py-2 px-3 text-left">Assessment 2</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="py-1.5 px-3">Profit Target</td>
+                        <td className="py-1.5 px-3">8%</td>
+                        <td className="py-1.5 px-3">5%</td>
+                      </tr>
+                      <tr className="bg-slate-900/40">
+                        <td className="py-1.5 px-3">Daily Loss Limit</td>
+                        <td className="py-1.5 px-3">5%</td>
+                        <td className="py-1.5 px-3">5%</td>
+                      </tr>
+                      <tr>
+                        <td className="py-1.5 px-3">Max Drawdown</td>
+                        <td className="py-1.5 px-3">8%</td>
+                        <td className="py-1.5 px-3">8%</td>
+                      </tr>
+                      <tr className="bg-slate-900/40">
+                        <td className="py-1.5 px-3">Inactivity Period</td>
+                        <td className="py-1.5 px-3">30 Days</td>
+                        <td className="py-1.5 px-3">30 Days</td>
+                      </tr>
+                      <tr>
+                        <td className="py-1.5 px-3">Leverage</td>
+                        <td className="py-1.5 px-3">1:50</td>
+                        <td className="py-1.5 px-3">1:50</td>
+                      </tr>
+                      <tr className="bg-slate-900/40">
+                        <td className="py-1.5 px-3">Max Time</td>
+                        <td className="py-1.5 px-3">No limit</td>
+                        <td className="py-1.5 px-3">–</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Copywriting di bawah tabel */}
+              <div className="mt-5 text-xs sm:text-sm text-gray-300 leading-relaxed">
+                <p className="mb-2">
+                  Secara sederhana, <span className="font-semibold text-amber-300">1-Step Challenge</span>{' '}
+                  cocok untuk trader yang sudah percaya dengan sistemnya dan ingin lebih cepat menuju
+                  akun funded dengan satu tahap assessment.
+                </p>
+                <p className="mb-2">
+                  <span className="font-semibold text-amber-300">2-Step Challenge</span> lebih ideal
+                  untuk trader yang ingin proses bertahap dengan target profit per tahap yang lebih
+                  ringan. Anda punya kesempatan menguji konsistensi strategi dalam dua fase sebelum
+                  mengelola dana yang lebih besar.
+                </p>
+                <p className="text-[11px] sm:text-xs text-gray-400">
+                  Vista akan membantu Anda memilih jalur yang paling realistis dengan gaya trading,
+                  toleransi risiko, dan waktu yang Anda miliki. Aturan dapat menyesuaikan ketentuan
+                  prop firm partner yang digunakan.
+                </p>
+              </div>
+            </div>
+
+            {/* CTA bawah modal */}
+            <div className="px-6 pb-4 sm:pb-5 flex flex-col sm:flex-row gap-3 border-t border-slate-800 bg-slate-900/60">
+              <button
+                type="button"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-900 text-sm font-semibold transition"
+              >
+                Diskusi Pilih 1-Step / 2-Step via WhatsApp
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowPropModal(false)}
                 className="w-full sm:w-auto px-5 py-2.5 rounded-lg border border-slate-700 text-gray-200 text-sm hover:border-amber-400 hover:text-amber-300 transition"
               >
                 Tutup

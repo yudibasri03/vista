@@ -67,7 +67,7 @@ export default function Products() {
         'Support tim Vista jika ada kendala teknis',
       ],
       ctaPrimary: 'Cara Kerja Program Tantangan',
-      ctaSecondary: 'Konsultasi Prop Challenge',
+      ctaSecondary: 'Konsultasi Program Tantangan',
       bgGradient: 'from-amber-600 to-amber-500',
       iconColor: 'text-amber-500',
     },
@@ -253,12 +253,14 @@ export default function Products() {
             </div>
 
             <div className="px-6 pb-4 sm:pb-5 flex flex-col sm:flex-row gap-3 border-t border-slate-800 bg-slate-900/60">
-              <button
-                type="button"
-                className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-900 text-sm font-semibold transition"
+              <a
+                href="https://wa.me/6289733488887"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-900 text-sm font-semibold transition text-center"
               >
                 Konsultasi Pilih Paket via WhatsApp
-              </button>
+              </a>
               <button
                 type="button"
                 onClick={() => setShowAcademyModal(false)}
@@ -423,12 +425,14 @@ export default function Products() {
 
             {/* CTA bawah modal */}
             <div className="px-6 pb-4 sm:pb-5 flex flex-col sm:flex-row gap-3 border-t border-slate-800 bg-slate-900/60">
-              <button
-                type="button"
-                className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-900 text-sm font-semibold transition"
+              <a
+                href="https://wa.me/6289733488887"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-900 text-sm font-semibold transition text-center"
               >
                 Diskusi Pilih 1-Step / 2-Step via WhatsApp
-              </button>
+              </a>
               <button
                 type="button"
                 onClick={() => setShowPropModal(false)}

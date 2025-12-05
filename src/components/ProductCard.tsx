@@ -89,10 +89,12 @@ export default function ProductCard(props: ProductCardProps) {
         </button>
 
         {ctaSecondary && (
-          <button
-            type="button"
+          <a
+            href="https://wa.me/6289733488887"
+            target="_blank"
+            rel="noopener noreferrer"
             className="
-              inline-flex justify-center items-center 
+              inline-flex justify-center items-center
               px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium
               border border-slate-700 text-gray-200
               hover:border-amber-400 hover:text-amber-300
@@ -100,7 +102,7 @@ export default function ProductCard(props: ProductCardProps) {
             "
           >
             {ctaSecondary}
-          </button>
+          </a>
         )}
       </div>
     </article>

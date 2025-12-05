@@ -33,9 +33,9 @@ export default function Header() {
                 {item.label}
               </a>
             ))}
-            <button className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover:shadow-lg">
+            <a href="https://wa.me/6289733488887" target="_blank" rel="noopener noreferrer" className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover:shadow-lg">
               Konsultasi Gratis
-            </button>
+            </a>
           </nav>
 
           <button
@@ -59,9 +59,9 @@ export default function Header() {
                   {item.label}
                 </a>
               ))}
-              <button className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-6 py-2 rounded-lg transition-all duration-300 mt-2">
+              <a href="https://wa.me/6289733488887" target="_blank" rel="noopener noreferrer" className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-6 py-2 rounded-lg transition-all duration-300 mt-2 text-center">
                 Konsultasi Gratis
-              </button>
+              </a>
             </nav>
           </div>
         )}

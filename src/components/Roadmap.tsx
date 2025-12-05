@@ -80,12 +80,24 @@ export default function Roadmap() {
     }
   ];
 
-  const HorizontalTimeline = ({ journey, label, isTraders }: { journey: typeof tradersJourney; label: string; isTraders: boolean }) => (
+  const HorizontalTimeline = ({
+    journey,
+    label,
+    isTraders,
+  }: {
+    journey: typeof tradersJourney;
+    label: string;
+    isTraders: boolean;
+  }) => (
     <div className="mb-20">
       <div className="flex items-center gap-8">
         {/* Label */}
         <div className="flex-shrink-0 w-24">
-          <div className={`text-4xl font-black tracking-wider ${isTraders ? "text-red-500" : "text-amber-400"}`}>
+          <div
+            className={`text-4xl font-black tracking-wider ${
+              isTraders ? "text-red-500" : "text-amber-400"
+            }`}
+          >
             {label}
           </div>
         </div>
@@ -93,12 +105,21 @@ export default function Roadmap() {
         {/* Timeline */}
         <div className="flex-1 relative">
           {/* Horizontal line */}
-          <div className={`absolute top-1/2 left-0 right-0 h-1 -translate-y-1/2 ${isTraders ? "bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400" : "bg-gradient-to-r from-amber-400 via-orange-400 to-pink-400"}`} />
+          <div
+            className={`absolute top-1/2 left-0 right-0 h-1 -translate-y-1/2 origin-left ${
+              isTraders
+                ? "bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400"
+                : "bg-gradient-to-r from-amber-400 via-orange-400 to-pink-400"
+            } animate-line-grow`}
+          />
 
           {/* Checkpoints */}
           <div className="relative flex justify-between">
-            {journey.map((checkpoint, index) => (
-              <div key={checkpoint.id} className="flex-1 flex flex-col items-center">
+            {journey.map((checkpoint) => (
+              <div
+                key={checkpoint.id}
+                className="flex-1 flex flex-col items-center"
+              >
                 {/* Top content */}
                 <div className="text-center mb-12 w-full px-2">
                   <h4 className="text-sm font-semibold text-gray-300 mb-2">
@@ -106,7 +127,10 @@ export default function Roadmap() {
                   </h4>
                   <ul className="text-xs text-gray-400 space-y-0.5">
                     {checkpoint.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-1 justify-center">
+                      <li
+                        key={i}
+                        className="flex items-start gap-1 justify-center"
+                      >
                         <span className="text-gray-600 flex-shrink-0">•</span>
                         <span>{item}</span>
                       </li>
@@ -115,11 +139,17 @@ export default function Roadmap() {
                 </div>
 
                 {/* Dot marker */}
-                <div className={`w-5 h-5 ${checkpoint.dotColor} rounded-full shadow-lg ${checkpoint.dotShadow} ring-4 ring-slate-950 relative z-10 flex-shrink-0`} />
+                <div
+                  className={`w-5 h-5 ${checkpoint.dotColor} rounded-full shadow-lg ${
+                    checkpoint.dotShadow
+                  } ring-4 ring-slate-950 relative z-10 flex-shrink-0 animate-dot-pulse`}
+                />
 
                 {/* Bottom content */}
                 <div className="text-center mt-6">
-                  <div className={`text-xs font-bold tracking-wider ${checkpoint.textColor}`}>
+                  <div
+                    className={`text-xs font-bold tracking-wider ${checkpoint.textColor}`}
+                  >
                     {checkpoint.date}
                   </div>
                 </div>
@@ -137,16 +167,27 @@ export default function Roadmap() {
         {/* Header */}
         <div className="text-center mb-24">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            Tentukan Perjalanan Finansial dan Pilih ingin jadi seperti apa kamu nantinya
+            Tentukan Perjalanan Finansial dan Pilih ingin jadi seperti apa kamu
+            nantinya
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-base leading-relaxed">
-            Dua perjalanan, satu tujuan: berkembang. Tentukan apakah Anda ingin membangun skill untuk menjadi trader profesional, atau mengembangkan portofolio sebagai investor cerdas.
+            Dua perjalanan, satu tujuan: berkembang. Tentukan apakah Anda ingin
+            membangun skill untuk menjadi trader profesional, atau
+            mengembangkan portofolio sebagai investor cerdas.
           </p>
         </div>
 
         {/* Journey Timelines */}
-        <HorizontalTimeline journey={tradersJourney} label="TRADER" isTraders={true} />
-        <HorizontalTimeline journey={investorsJourney} label="INVESTOR" isTraders={false} />
+        <HorizontalTimeline
+          journey={tradersJourney}
+          label="TRADER"
+          isTraders={true}
+        />
+        <HorizontalTimeline
+          journey={investorsJourney}
+          label="INVESTOR"
+          isTraders={false}
+        />
       </div>
 
       {/* Decorative elements */}

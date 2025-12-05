@@ -1,4 +1,5 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { createWhatsAppLink, WHATSAPP_MESSAGES } from '../utils/whatsapp';
 
 export default function Hero() {
   return (
@@ -30,7 +31,7 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="https://wa.me/6289733488887" target="_blank" rel="noopener noreferrer" className="group bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-amber-500/25 hover:scale-105 flex items-center gap-2">
+            <a href={createWhatsAppLink(WHATSAPP_MESSAGES.KONSULTASI_GRATIS)} target="_blank" rel="noopener noreferrer" className="group bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-amber-500/25 hover:scale-105 flex items-center gap-2">
               Konsultasi Gratis dengan Tim Vista
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>

@@ -12,7 +12,9 @@ interface ProductCardProps {
   ctaSecondary?: string;
   bgGradient: string;
   iconColor: string;
-  onPrimaryClick?: () => void; // <--- tambahan
+  onPrimaryClick?: () => void;
+  primaryWhatsAppLink?: string;
+  secondaryWhatsAppLink?: string;
 }
 
 export default function ProductCard(props: ProductCardProps) {
@@ -28,6 +30,8 @@ export default function ProductCard(props: ProductCardProps) {
     bgGradient,
     iconColor,
     onPrimaryClick,
+    primaryWhatsAppLink,
+    secondaryWhatsAppLink,
   } = props;
 
   return (
@@ -90,7 +94,7 @@ export default function ProductCard(props: ProductCardProps) {
           </button>
         ) : (
           <a
-            href="https://wa.me/6289733488887"
+            href={primaryWhatsAppLink}
             target="_blank"
             rel="noopener noreferrer"
             className={`
@@ -107,7 +111,7 @@ export default function ProductCard(props: ProductCardProps) {
 
         {ctaSecondary && (
           <a
-            href="https://wa.me/6289733488887"
+            href={secondaryWhatsAppLink}
             target="_blank"
             rel="noopener noreferrer"
             className="

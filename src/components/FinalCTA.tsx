@@ -1,4 +1,5 @@
 import { MessageCircle, Send } from 'lucide-react';
+import { createWhatsAppLink, WHATSAPP_MESSAGES } from '../utils/whatsapp';
 
 export default function FinalCTA() {
   return (
@@ -16,11 +17,11 @@ export default function FinalCTA() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-2xl mx-auto">
-          <a href="https://wa.me/6289733488887" target="_blank" rel="noopener noreferrer" className="group w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-8 py-5 rounded-lg transition-all duration-300 shadow-lg hover:shadow-amber-500/25 hover:scale-105 flex items-center justify-center gap-3">
+          <a href={createWhatsAppLink(WHATSAPP_MESSAGES.KONSULTASI_GRATIS)} target="_blank" rel="noopener noreferrer" className="group w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-8 py-5 rounded-lg transition-all duration-300 shadow-lg hover:shadow-amber-500/25 hover:scale-105 flex items-center justify-center gap-3">
             <MessageCircle className="w-6 h-6" />
             Chat via WhatsApp
           </a>
-          <a href="https://wa.me/6289733488887" target="_blank" rel="noopener noreferrer" className="group w-full sm:w-auto bg-slate-800 border-2 border-amber-400/30 hover:border-amber-400 text-white font-semibold px-8 py-5 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3">
+          <a href={createWhatsAppLink(WHATSAPP_MESSAGES.KONSULTASI_GRATIS)} target="_blank" rel="noopener noreferrer" className="group w-full sm:w-auto bg-slate-800 border-2 border-amber-400/30 hover:border-amber-400 text-white font-semibold px-8 py-5 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3">
             <Send className="w-6 h-6" />
             Isi Form Konsultasi Gratis
           </a>

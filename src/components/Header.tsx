@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { TrendingUp, Menu, X } from 'lucide-react';
+import { createWhatsAppLink, WHATSAPP_MESSAGES } from '../utils/whatsapp';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -33,7 +34,7 @@ export default function Header() {
                 {item.label}
               </a>
             ))}
-            <a href="https://wa.me/6289733488887" target="_blank" rel="noopener noreferrer" className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover:shadow-lg">
+            <a href={createWhatsAppLink(WHATSAPP_MESSAGES.KONSULTASI_GRATIS)} target="_blank" rel="noopener noreferrer" className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover:shadow-lg">
               Konsultasi Gratis
             </a>
           </nav>
@@ -59,7 +60,7 @@ export default function Header() {
                   {item.label}
                 </a>
               ))}
-              <a href="https://wa.me/6289733488887" target="_blank" rel="noopener noreferrer" className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-6 py-2 rounded-lg transition-all duration-300 mt-2 text-center">
+              <a href={createWhatsAppLink(WHATSAPP_MESSAGES.KONSULTASI_GRATIS)} target="_blank" rel="noopener noreferrer" className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-6 py-2 rounded-lg transition-all duration-300 mt-2 text-center">
                 Konsultasi Gratis
               </a>
             </nav>

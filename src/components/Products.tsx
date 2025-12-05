@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import ProductCard from './ProductCard';
 import { GraduationCap, TrendingUp, Cpu, Star, X } from 'lucide-react';
+import { createWhatsAppLink, WHATSAPP_MESSAGES } from '../utils/whatsapp';
 
 function Row({
   label,
@@ -47,6 +48,7 @@ export default function Products() {
       ctaSecondary: 'Tanya Tim Vista',
       bgGradient: 'from-amber-600 to-amber-500',
       iconColor: 'text-amber-500',
+      secondaryWhatsAppLink: createWhatsAppLink(WHATSAPP_MESSAGES.EDUKASI_TRADING),
     },
     {
       icon: TrendingUp,
@@ -70,6 +72,7 @@ export default function Products() {
       ctaSecondary: 'Konsultasi Program Tantangan',
       bgGradient: 'from-amber-600 to-amber-500',
       iconColor: 'text-amber-500',
+      secondaryWhatsAppLink: createWhatsAppLink(WHATSAPP_MESSAGES.PROGRAM_TANTANGAN),
     },
     {
       icon: Cpu,
@@ -92,6 +95,7 @@ export default function Products() {
       ctaSecondary: 'Jadwalkan Demo ATM',
       bgGradient: 'from-amber-600 to-amber-500',
       iconColor: 'text-amber-500',
+      secondaryWhatsAppLink: createWhatsAppLink(WHATSAPP_MESSAGES.ALGO_TRADING),
     },
     {
       icon: Star,
@@ -114,6 +118,7 @@ export default function Products() {
       ctaSecondary: undefined,
       bgGradient: 'from-amber-500 to-orange-600',
       iconColor: 'text-amber-500',
+      primaryWhatsAppLink: createWhatsAppLink(WHATSAPP_MESSAGES.VIP_MEMBERSHIP),
     },
   ];
 
@@ -254,7 +259,7 @@ export default function Products() {
 
             <div className="px-6 pb-4 sm:pb-5 flex flex-col sm:flex-row gap-3 border-t border-slate-800 bg-slate-900/60">
               <a
-                href="https://wa.me/6289733488887"
+                href={createWhatsAppLink(WHATSAPP_MESSAGES.PILIHAN_EDUKASI)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-900 text-sm font-semibold transition text-center"
@@ -426,7 +431,7 @@ export default function Products() {
             {/* CTA bawah modal */}
             <div className="px-6 pb-4 sm:pb-5 flex flex-col sm:flex-row gap-3 border-t border-slate-800 bg-slate-900/60">
               <a
-                href="https://wa.me/6289733488887"
+                href={createWhatsAppLink(WHATSAPP_MESSAGES.PILIH_TANTANGAN)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-900 text-sm font-semibold transition text-center"

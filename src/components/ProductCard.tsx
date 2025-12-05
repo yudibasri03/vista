@@ -1,108 +1,105 @@
-// src/components/ProductCard.tsx
-import { ComponentType } from 'react';
+import { LucideIcon } from 'lucide-react';
 
-interface ProductCardProps {
-  icon: ComponentType<{ className?: string }>;
+type ProductCardProps = {
+  icon: LucideIcon;
   tagline: string;
   title: string;
   description: string;
   targetAudience: string[];
   features: string[];
-  ctaPrimary: string;
+  ctaPrimary?: string;
   ctaSecondary?: string;
   bgGradient: string;
   iconColor: string;
-  onPrimaryClick?: () => void; // <--- tambahan
-}
+  onPrimaryClick?: () => void;   // 🔹 tambahkan
+  onSecondaryClick?: () => void; // 🔹 optional kalau nanti dipakai
+};
 
-export default function ProductCard(props: ProductCardProps) {
-  const {
-    icon: Icon,
-    tagline,
-    title,
-    description,
-    targetAudience,
-    features,
-    ctaPrimary,
-    ctaSecondary,
-    bgGradient,
-    iconColor,
-    onPrimaryClick,
-  } = props;
-
+export default function ProductCard({
+  icon: Icon,
+  tagline,
+  title,
+  description,
+  targetAudience,
+  features,
+  ctaPrimary,
+  ctaSecondary,
+  bgGradient, // (belum dipakai di wrapper, bisa nanti untuk variant bg)
+  iconColor,
+  onPrimaryClick,
+  onSecondaryClick,
+}: ProductCardProps) {
   return (
-    <article className="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 sm:p-6 flex flex-col h-full">
+    <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-8 shadow-lg hover:shadow-amber-500/10 transition-shadow duration-300">
       {/* Header */}
-      <div className="flex items-center gap-3 mb-4">
-        <div className="inline-flex items-center justify-center rounded-xl bg-slate-900/80 border border-slate-700 p-2">
-          <Icon className={`w-5 h-5 ${iconColor}`} />
+      <div className="flex items-center gap-3 mb-6">
+        <div className="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center">
+          <Icon className={`w-6 h-6 ${iconColor}`} />
         </div>
-        <span className="text-xs font-semibold uppercase tracking-wide text-amber-400">
-          {tagline}
-        </span>
+        <div>
+          <div className="text-xs font-semibold tracking-widest text-amber-400 uppercase">
+            {tagline}
+          </div>
+          <h3 className="text-2xl font-bold text-white">{title}</h3>
+        </div>
       </div>
 
-      <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3">
-        {title}
-      </h3>
-
-      <p className="text-sm text-gray-300 mb-4">
+      {/* Description */}
+      <p className="text-gray-300 text-sm leading-relaxed mb-6">
         {description}
       </p>
 
-      <div className="grid sm:grid-cols-2 gap-4 mb-4">
+      {/* Content lists */}
+      <div className="grid md:grid-cols-2 gap-6 mb-8">
         <div>
-          <h4 className="text-xs font-semibold text-gray-400 uppercase mb-2">
-            Cocok untuk
+          <h4 className="text-xs font-semibold text-gray-400 tracking-wider mb-2">
+            COCOK UNTUK
           </h4>
-          <ul className="space-y-1.5 text-xs sm:text-sm text-gray-300">
-            {targetAudience.map((item, idx) => (
-              <li key={idx}>• {item}</li>
+          <ul className="text-sm text-gray-300 space-y-1.5">
+            {targetAudience.map((item, i) => (
+              <li key={i} className="flex gap-2">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-400/80" />
+                <span>{item}</span>
+              </li>
             ))}
           </ul>
         </div>
         <div>
-          <h4 className="text-xs font-semibold text-gray-400 uppercase mb-2">
-            Yang Anda Dapatkan
+          <h4 className="text-xs font-semibold text-gray-400 tracking-wider mb-2">
+            YANG ANDA DAPATKAN
           </h4>
-          <ul className="space-y-1.5 text-xs sm:text-sm text-gray-300">
-            {features.map((item, idx) => (
-              <li key={idx}>• {item}</li>
+          <ul className="text-sm text-gray-300 space-y-1.5">
+            {features.map((item, i) => (
+              <li key={i} className="flex gap-2">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-400/80" />
+                <span>{item}</span>
+              </li>
             ))}
           </ul>
         </div>
       </div>
 
-      <div className="mt-auto pt-4 flex flex-col sm:flex-row gap-3">
-        <button
-          type="button"
-          onClick={onPrimaryClick}
-          className={`
-            inline-flex justify-center items-center 
-            px-4 py-2.5 rounded-lg text-xs sm:text-sm font-semibold
-            bg-gradient-to-r ${bgGradient}
-            text-slate-950
-            hover:opacity-90 transition
-          `}
-        >
-          {ctaPrimary}
-        </button>
-
+      {/* CTA buttons */}
+      <div className="flex flex-wrap gap-4">
+        {ctaPrimary && (
+          <button
+            type="button"
+            onClick={onPrimaryClick}
+            className="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold text-sm transition-colors"
+          >
+            {ctaPrimary}
+          </button>
+        )}
         {ctaSecondary && (
           <button
             type="button"
-            className="
-              inline-flex justify-center items-center 
-              px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium
-              border border-slate-700 text-gray-200
-              hover:border-amber-400 hover:text-amber-300
-              transition
-            "
+            onClick={onSecondaryClick}
+            className="px-6 py-3 rounded-xl border border-slate-600 text-gray-100 text-sm hover:bg-slate-800 transition-colors"
           >
             {ctaSecondary}
           </button>
         )}
       </div>
-    </article>
+    </div>
   );
 }

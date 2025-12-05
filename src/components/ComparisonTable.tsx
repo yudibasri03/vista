@@ -35,7 +35,7 @@ export default function ComparisonTable() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Perbandingan Produk Vista
+            Pilih Perjalanan-mu
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Biar pengunjung gampang milih jalur yang tepat

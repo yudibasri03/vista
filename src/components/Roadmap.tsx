@@ -2,7 +2,7 @@ export default function Roadmap() {
   const tradersJourney = [
     {
       id: 1,
-      date: "1",
+      date: "Build",
       title: "Belajar di Vista Academy",
       text: "Belajar di Vista Academy dan temukan metode trading milik kamu sendiri.",
       dotColor: "bg-blue-400",
@@ -11,7 +11,7 @@ export default function Roadmap() {
     },
     {
       id: 2,
-      date: "2",
+      date: "Prove",
       title: "Program Tantangan",
       text: "Uji metode tradingmu, bangun disiplin, dan percaya strategi adalah metode terbaik.",
       dotColor: "bg-cyan-400",
@@ -20,7 +20,7 @@ export default function Roadmap() {
     },
     {
       id: 3,
-      date: "3",
+      date: "Grow",
       title: "Trader Professional",
       text: "Menjadi trader profesional dan memiliki portofolio yang terukur.",
       dotColor: "bg-green-400",
@@ -32,7 +32,7 @@ export default function Roadmap() {
   const investorsJourney = [
     {
       id: 1,
-      date: "1",
+      date: "Plan",
       title: "Petakan Diversifikasi",
       text: "Petakan arah diversifikasimu sebagai investor yang cerdas.",
       dotColor: "bg-amber-400",
@@ -41,7 +41,7 @@ export default function Roadmap() {
     },
     {
       id: 2,
-      date: "2",
+      date: "Diversify",
       title: "VIP Group & Algo ATM",
       text: "Mulai dari VIP Group Signal, lanjutkan diversifikasi melalui Algo ATM.",
       dotColor: "bg-orange-400",
@@ -50,7 +50,7 @@ export default function Roadmap() {
     },
     {
       id: 3,
-      date: "3",
+      date: "Optimize",
       title: "Smart Investor",
       text: "Menjadi smart investor dengan portofolio diversifikasi dari team trader dan algo trading.",
       dotColor: "bg-pink-400",

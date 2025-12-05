@@ -2,7 +2,7 @@ export default function Roadmap() {
   const tradersJourney = [
     {
       id: 1,
-      date: "Checkpoint Pertama",
+      date: "1",
       title: "Belajar di Vista Academy",
       items: [
         "Belajar di Vista Academy",
@@ -14,7 +14,7 @@ export default function Roadmap() {
     },
     {
       id: 2,
-      date: "Checkpoint Kedua",
+      date: "2",
       title: "Program Tantangan",
       items: [
         "Ujilah metode trading kamu",
@@ -27,7 +27,7 @@ export default function Roadmap() {
     },
     {
       id: 3,
-      date: "Checkpoint Ketiga",
+      date: "3",
       title: "Trader Professional",
       items: [
         "Menjadi Trader Professional",
@@ -42,7 +42,7 @@ export default function Roadmap() {
   const investorsJourney = [
     {
       id: 1,
-      date: "Checkpoint Pertama",
+      date: "1",
       title: "Petakan Diversifikasi",
       items: [
         "Petakan arah diversifikasi mu",
@@ -54,7 +54,7 @@ export default function Roadmap() {
     },
     {
       id: 2,
-      date: "Checkpoint Kedua",
+      date: "2",
       title: "VIP Group Signal",
       items: [
         "VIP Group Signal launch",
@@ -67,7 +67,7 @@ export default function Roadmap() {
     },
     {
       id: 3,
-      date: "Checkpoint Ketiga",
+      date: "3",
       title: "Smart Investor",
       items: [
         "Menjadi Smart Investor",

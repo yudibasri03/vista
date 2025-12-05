@@ -32,7 +32,7 @@ export default function Products() {
     {
       icon: TrendingUp,
       tagline: 'Program Tantangan',
-      title: 'Prop Challenge',
+      title: 'Tantangan Trading',
       description:
         'Program tantangan trading berjenjang yang memberi Anda akses ke modal trading lebih besar ketika Anda lulus aturan risk & target yang disepakati.',
       targetAudience: [

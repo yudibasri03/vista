@@ -53,11 +53,11 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
-                <span className="text-sm">+62 812-3456-7890</span>
+                <span className="text-sm">021-50183333</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
-                <span className="text-sm">Jakarta, Indonesia</span>
+                <span className="text-sm">Komplek Golden Plaza Jl.RS Fatmawati 15, Blok A-18, RT.2/RW.6, Gandaria Selatan, Kec. Cilandak, Jakarta Selatan, DKI Jakarta 12420</span>
               </li>
             </ul>
           </div>

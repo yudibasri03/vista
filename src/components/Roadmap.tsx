@@ -69,15 +69,13 @@ export default function Roadmap() {
   isTraders: boolean;
 }) => (
   <div className="mb-24">
-    <div className="flex items-center gap-8">
-      {/* LABEL DI KIRI – sekarang sejajar garis */}
+    {/* DESKTOP VIEW */}
+    <div className="hidden lg:flex items-center gap-8">
       <div className="flex-shrink-0 w-32 text-right">
         <h3 className="text-3xl font-bold text-white">{label}</h3>
       </div>
 
-      {/* TIMELINE DI KANAN */}
       <div className="flex-1 relative">
-        {/* Garis animasi */}
         <div
           className={`absolute top-1/2 left-0 right-0 h-1 -translate-y-1/2 rounded-full origin-left animate-line-grow ${
             isTraders
@@ -86,7 +84,6 @@ export default function Roadmap() {
           }`}
         />
 
-        {/* Checkpoints */}
         <div className="relative flex justify-between px-2">
           {journey.map((checkpoint) => (
             <div
@@ -112,6 +109,49 @@ export default function Roadmap() {
                 >
                   {checkpoint.date}
                 </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* MOBILE VIEW */}
+    <div className="lg:hidden">
+      <h3 className="text-2xl font-bold text-white mb-8 text-center">{label}</h3>
+
+      <div className="relative pl-8">
+        {/* Vertical Line */}
+        <div
+          className={`absolute left-3 top-0 bottom-0 w-1 rounded-full ${
+            isTraders
+              ? "bg-gradient-to-b from-blue-400 via-cyan-400 to-green-400"
+              : "bg-gradient-to-b from-amber-400 via-orange-400 to-pink-400"
+          }`}
+        />
+
+        {/* Checkpoints */}
+        <div className="space-y-12">
+          {journey.map((checkpoint, index) => (
+            <div key={checkpoint.id} className="relative">
+              {/* Dot */}
+              <div
+                className={`absolute -left-[22px] top-2 w-5 h-5 ${checkpoint.dotColor} rounded-full shadow-lg ${checkpoint.dotShadow} ring-4 ring-slate-950`}
+              />
+
+              {/* Content */}
+              <div className="pl-4">
+                <span
+                  className={`inline-block text-xs font-bold tracking-wider ${checkpoint.textColor} mb-2`}
+                >
+                  {checkpoint.date}
+                </span>
+                <h4 className="text-lg font-semibold text-gray-200 mb-2">
+                  {checkpoint.title}
+                </h4>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  {checkpoint.text}
+                </p>
               </div>
             </div>
           ))}

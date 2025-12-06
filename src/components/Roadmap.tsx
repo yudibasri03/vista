@@ -90,26 +90,55 @@ export default function Roadmap() {
               key={checkpoint.id}
               className="flex flex-col items-center w-1/3 text-center"
             >
-              <div className="mb-10 min-h-[80px] flex flex-col justify-end">
-                <h4 className="text-sm font-semibold text-gray-200 mb-1">
-                  {checkpoint.title}
-                </h4>
-                <p className="text-xs text-gray-400 leading-relaxed px-2">
-                  {checkpoint.text}
-                </p>
-              </div>
+              {checkpoint.id === 2 ? (
+                // MIDDLE CHECKPOINT - Dot di atas, text di bawah
+                <>
+                  <div className="mb-3">
+                    <span
+                      className={`text-xs font-bold tracking-wider ${checkpoint.textColor}`}
+                    >
+                      {checkpoint.date}
+                    </span>
+                  </div>
 
-              <div
-                className={`w-6 h-6 ${checkpoint.dotColor} rounded-full shadow-lg ${checkpoint.dotShadow} ring-4 ring-slate-950 animate-dot-pulse`}
-              />
+                  <div
+                    className={`w-6 h-6 ${checkpoint.dotColor} rounded-full shadow-lg ${checkpoint.dotShadow} ring-4 ring-slate-950 animate-dot-pulse`}
+                  />
 
-              <div className="mt-3">
-                <span
-                  className={`text-xs font-bold tracking-wider ${checkpoint.textColor}`}
-                >
-                  {checkpoint.date}
-                </span>
-              </div>
+                  <div className="mt-10 max-w-[200px]">
+                    <h4 className="text-sm font-semibold text-gray-200 mb-3">
+                      {checkpoint.title}
+                    </h4>
+                    <p className="text-xs text-gray-400 leading-[1.8] px-2">
+                      {checkpoint.text}
+                    </p>
+                  </div>
+                </>
+              ) : (
+                // FIRST & LAST CHECKPOINT - Text di atas, dot di tengah
+                <>
+                  <div className="mb-10 min-h-[120px] flex flex-col justify-end max-w-[200px]">
+                    <h4 className="text-sm font-semibold text-gray-200 mb-3">
+                      {checkpoint.title}
+                    </h4>
+                    <p className="text-xs text-gray-400 leading-[1.8] px-2">
+                      {checkpoint.text}
+                    </p>
+                  </div>
+
+                  <div
+                    className={`w-6 h-6 ${checkpoint.dotColor} rounded-full shadow-lg ${checkpoint.dotShadow} ring-4 ring-slate-950 animate-dot-pulse`}
+                  />
+
+                  <div className="mt-3">
+                    <span
+                      className={`text-xs font-bold tracking-wider ${checkpoint.textColor}`}
+                    >
+                      {checkpoint.date}
+                    </span>
+                  </div>
+                </>
+              )}
             </div>
           ))}
         </div>

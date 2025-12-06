@@ -1,230 +1,120 @@
 export default function Roadmap() {
-  const tradersJourney = [
+  const journeySteps = [
     {
       id: 1,
-      topLabel: "Build",
-      topTitle: "Coaching",
-      topText: "Belajar di Vista Academy dan temukan metode trading milik kamu sendiri.",
-      bottomTitle: "Saving",
-      bottomText: "Mulai menabung dan kelola keuangan dengan baik untuk modal trading.",
+      label: "Build",
+      title: "Belajar di Vista Academy",
+      description: "Belajar di Vista Academy dan temukan metode trading milik kamu sendiri.",
       dotColor: "bg-blue-400",
-      dotShadow: "shadow-blue-500/40",
-      textColor: "text-blue-300",
+      dotShadow: "shadow-blue-500/50",
     },
     {
       id: 2,
-      topLabel: "Prove",
-      topTitle: "Investment",
-      topText: "Uji metode tradingmu dan investasikan waktu untuk membangun disiplin.",
-      bottomTitle: "Management",
-      bottomText: "Kelola portofolio dan risk management dengan strategi yang terukur.",
+      label: "Prove",
+      title: "Program Tantangan",
+      description: "Uji metode trading dengan disiplin dan pengelolaan strategis adalah metode terbaik.",
       dotColor: "bg-cyan-400",
-      dotShadow: "shadow-cyan-500/40",
-      textColor: "text-cyan-300",
+      dotShadow: "shadow-cyan-500/50",
     },
     {
       id: 3,
-      topLabel: "Grow",
-      topTitle: "Professional",
-      topText: "Menjadi trader profesional dengan track record yang konsisten.",
-      bottomTitle: "Growth",
-      bottomText: "Kembangkan portofolio dan tingkatkan profit secara berkelanjutan.",
+      label: "Grow",
+      title: "Trader Professional",
+      description: "Menjadi trader professional dan memiliki portofolio yang terukur.",
       dotColor: "bg-green-400",
-      dotShadow: "shadow-green-500/40",
-      textColor: "text-green-300",
+      dotShadow: "shadow-green-500/50",
     },
   ];
-
-  const investorsJourney = [
-    {
-      id: 1,
-      topLabel: "Plan",
-      topTitle: "Strategy",
-      topText: "Petakan arah diversifikasimu sebagai investor yang cerdas.",
-      bottomTitle: "Portfolio",
-      bottomText: "Bangun portfolio yang seimbang dengan berbagai instrumen investasi.",
-      dotColor: "bg-amber-400",
-      dotShadow: "shadow-amber-500/40",
-      textColor: "text-amber-300",
-    },
-    {
-      id: 2,
-      topLabel: "Diversify",
-      topTitle: "VIP Group",
-      topText: "Mulai dari VIP Group Signal dan pelajari strategi dari expert.",
-      bottomTitle: "Algo ATM",
-      bottomText: "Lanjutkan diversifikasi melalui Algo ATM untuk passive income.",
-      dotColor: "bg-orange-400",
-      dotShadow: "shadow-orange-500/40",
-      textColor: "text-orange-300",
-    },
-    {
-      id: 3,
-      topLabel: "Optimize",
-      topTitle: "Smart Investor",
-      topText: "Optimalkan return dengan kombinasi signal trading dan algoritma.",
-      bottomTitle: "Wealth",
-      bottomText: "Capai kebebasan finansial dengan portofolio yang terdiversifikasi.",
-      dotColor: "bg-pink-400",
-      dotShadow: "shadow-pink-500/40",
-      textColor: "text-pink-300",
-    },
-  ];
-
-  const HorizontalTimeline = ({
-  journey,
-  label,
-  isTraders,
-}: {
-  journey: typeof tradersJourney;
-  label: string;
-  isTraders: boolean;
-}) => (
-  <div className="mb-32">
-    {/* DESKTOP VIEW */}
-    <div className="hidden lg:flex items-center gap-8">
-      <div className="flex-shrink-0 w-32 text-right">
-        <h3 className="text-3xl font-bold text-white">{label}</h3>
-      </div>
-
-      <div className="flex-1 relative">
-        <div
-          className={`absolute top-1/2 left-0 right-0 h-1 -translate-y-1/2 rounded-full origin-left animate-line-grow ${
-            isTraders
-              ? "bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400"
-              : "bg-gradient-to-r from-amber-400 via-orange-400 to-pink-400"
-          }`}
-        />
-
-        <div className="relative flex justify-between px-4">
-          {journey.map((checkpoint) => (
-            <div
-              key={checkpoint.id}
-              className="flex flex-col items-center text-center relative"
-              style={{ width: 'calc(100% / 3)', maxWidth: '280px' }}
-            >
-              {/* TOP SECTION */}
-              <div className="mb-6 max-w-[200px]">
-                <h4 className="text-lg font-bold text-white mb-2">
-                  {checkpoint.topTitle}
-                </h4>
-                <p className="text-xs text-gray-400 leading-relaxed">
-                  {checkpoint.topText}
-                </p>
-              </div>
-
-              {/* Vertical Line from top */}
-              <div className={`w-0.5 h-20 ${checkpoint.dotColor} mb-3`} />
-
-              {/* Dot on horizontal line */}
-              <div
-                className={`w-7 h-7 ${checkpoint.dotColor} rounded-full shadow-lg ${checkpoint.dotShadow} ring-4 ring-slate-950 animate-dot-pulse z-10`}
-              />
-
-              {/* Vertical Line to bottom */}
-              <div className={`w-0.5 h-20 ${checkpoint.dotColor} mt-3 mb-6`} />
-
-              {/* BOTTOM SECTION */}
-              <div className="max-w-[200px]">
-                <h4 className="text-lg font-bold text-white mb-2">
-                  {checkpoint.bottomTitle}
-                </h4>
-                <p className="text-xs text-gray-400 leading-relaxed">
-                  {checkpoint.bottomText}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-
-    {/* MOBILE VIEW */}
-    <div className="lg:hidden">
-      <h3 className="text-2xl font-bold text-white mb-8 text-center">{label}</h3>
-
-      <div className="relative pl-8">
-        {/* Vertical Line */}
-        <div
-          className={`absolute left-3 top-0 bottom-0 w-1 rounded-full ${
-            isTraders
-              ? "bg-gradient-to-b from-blue-400 via-cyan-400 to-green-400"
-              : "bg-gradient-to-b from-amber-400 via-orange-400 to-pink-400"
-          }`}
-        />
-
-        {/* Checkpoints */}
-        <div className="space-y-12">
-          {journey.map((checkpoint) => (
-            <div key={checkpoint.id} className="relative">
-              {/* Dot */}
-              <div
-                className={`absolute -left-[22px] top-2 w-5 h-5 ${checkpoint.dotColor} rounded-full shadow-lg ${checkpoint.dotShadow} ring-4 ring-slate-950`}
-              />
-
-              {/* Content */}
-              <div className="pl-4">
-                <span
-                  className={`inline-block text-xs font-bold tracking-wider ${checkpoint.textColor} mb-2`}
-                >
-                  {checkpoint.topLabel}
-                </span>
-                <h4 className="text-lg font-semibold text-gray-200 mb-2">
-                  {checkpoint.topTitle}
-                </h4>
-                <p className="text-sm text-gray-400 leading-relaxed mb-4">
-                  {checkpoint.topText}
-                </p>
-                <h4 className="text-lg font-semibold text-gray-200 mb-2">
-                  {checkpoint.bottomTitle}
-                </h4>
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  {checkpoint.bottomText}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </div>
-);
 
   return (
     <section className="relative py-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
-      <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
-
-      <div className="absolute top-1/4 left-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
 
       <div className="relative max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20">
-          <div className="inline-block bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 mb-6">
-            <span className="text-sm font-semibold text-amber-400">Perjalanan Anda</span>
+        {/* DESKTOP VIEW */}
+        <div className="hidden lg:flex items-center justify-center gap-12">
+          {/* Label "Trader" */}
+          <div className="flex-shrink-0">
+            <h3 className="text-4xl font-bold text-white">Trader</h3>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight">
-            Tentukan Perjalanan Finansial dan Pilih ingin jadi seperti apa kamu nantinya
-          </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
-            Dua perjalanan, satu tujuan: berkembang. Tentukan apakah Anda ingin membangun skill
-            untuk menjadi trader profesional, atau mengembangkan portofolio sebagai investor cerdas.
-          </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto mt-6"></div>
+
+          {/* Timeline */}
+          <div className="flex-1 max-w-4xl relative">
+            {/* Horizontal Line */}
+            <div className="absolute top-1/2 left-0 right-0 h-0.5 -translate-y-1/2 bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400"></div>
+
+            {/* Steps */}
+            <div className="relative flex justify-between items-center">
+              {journeySteps.map((step, index) => (
+                <div
+                  key={step.id}
+                  className="flex flex-col items-center"
+                  style={{ width: 'calc(100% / 3)' }}
+                >
+                  {/* Top Section - Description */}
+                  <div className="mb-8 text-center max-w-[240px]">
+                    <h4 className="text-base font-bold text-white mb-2">
+                      {step.title}
+                    </h4>
+                    <p className="text-xs text-gray-400 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+
+                  {/* Vertical Line to Dot */}
+                  <div className={`w-px h-16 ${step.dotColor}`}></div>
+
+                  {/* Dot */}
+                  <div
+                    className={`w-6 h-6 ${step.dotColor} rounded-full shadow-xl ${step.dotShadow} ring-4 ring-slate-900 z-10`}
+                  ></div>
+
+                  {/* Label below */}
+                  <div className="mt-4">
+                    <span className="text-sm font-semibold text-white">
+                      {step.label}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        {/* Trader Journey */}
-        <HorizontalTimeline
-          journey={tradersJourney}
-          label="Trader"
-          isTraders={true}
-        />
+        {/* MOBILE VIEW */}
+        <div className="lg:hidden">
+          <h3 className="text-3xl font-bold text-white mb-12 text-center">Trader</h3>
 
-        {/* Investor Journey */}
-        <HorizontalTimeline
-          journey={investorsJourney}
-          label="Investor"
-          isTraders={false}
-        />
+          <div className="relative pl-12">
+            {/* Vertical Line */}
+            <div className="absolute left-5 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 via-cyan-400 to-green-400"></div>
+
+            {/* Steps */}
+            <div className="space-y-12">
+              {journeySteps.map((step) => (
+                <div key={step.id} className="relative">
+                  {/* Dot */}
+                  <div
+                    className={`absolute -left-[26px] top-2 w-5 h-5 ${step.dotColor} rounded-full shadow-lg ${step.dotShadow} ring-4 ring-slate-900`}
+                  ></div>
+
+                  {/* Content */}
+                  <div>
+                    <span className="inline-block text-sm font-bold text-white mb-1">
+                      {step.label}
+                    </span>
+                    <h4 className="text-lg font-bold text-white mb-2">
+                      {step.title}
+                    </h4>
+                    <p className="text-sm text-gray-400 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -94,7 +94,7 @@ export default function Roadmap() {
               {checkpoint.id === 2 ? (
                 // MIDDLE CHECKPOINT - Dot di atas, text di bawah
                 <>
-                  <div className="mb-8">
+                  <div className="mb-4">
                     <span
                       className={`text-xs font-bold tracking-wider ${checkpoint.textColor}`}
                     >
@@ -106,7 +106,7 @@ export default function Roadmap() {
                     className={`w-6 h-6 ${checkpoint.dotColor} rounded-full shadow-lg ${checkpoint.dotShadow} ring-4 ring-slate-950 animate-dot-pulse`}
                   />
 
-                  <div className="mt-24 max-w-[160px]">
+                  <div className="mt-20 max-w-[160px]">
                     <h4 className="text-sm font-semibold text-gray-200 mb-3">
                       {checkpoint.title}
                     </h4>

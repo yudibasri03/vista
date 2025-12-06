@@ -84,7 +84,7 @@ export default function Roadmap() {
           }`}
         />
 
-        <div className="relative flex justify-between px-2">
+        <div className="relative flex justify-between px-8">
           {journey.map((checkpoint) => (
             <div
               key={checkpoint.id}
@@ -93,7 +93,7 @@ export default function Roadmap() {
               {checkpoint.id === 2 ? (
                 // MIDDLE CHECKPOINT - Dot di atas, text di bawah
                 <>
-                  <div className="mb-3">
+                  <div className="mb-6">
                     <span
                       className={`text-xs font-bold tracking-wider ${checkpoint.textColor}`}
                     >
@@ -105,11 +105,11 @@ export default function Roadmap() {
                     className={`w-6 h-6 ${checkpoint.dotColor} rounded-full shadow-lg ${checkpoint.dotShadow} ring-4 ring-slate-950 animate-dot-pulse`}
                   />
 
-                  <div className="mt-10 max-w-[200px]">
+                  <div className="mt-12 w-[180px]">
                     <h4 className="text-sm font-semibold text-gray-200 mb-3">
                       {checkpoint.title}
                     </h4>
-                    <p className="text-xs text-gray-400 leading-[1.8] px-2">
+                    <p className="text-xs text-gray-400 leading-[2] px-1">
                       {checkpoint.text}
                     </p>
                   </div>
@@ -117,11 +117,11 @@ export default function Roadmap() {
               ) : (
                 // FIRST & LAST CHECKPOINT - Text di atas, dot di tengah
                 <>
-                  <div className="mb-10 min-h-[120px] flex flex-col justify-end max-w-[200px]">
+                  <div className="mb-16 min-h-[100px] flex flex-col justify-end w-[180px]">
                     <h4 className="text-sm font-semibold text-gray-200 mb-3">
                       {checkpoint.title}
                     </h4>
-                    <p className="text-xs text-gray-400 leading-[1.8] px-2">
+                    <p className="text-xs text-gray-400 leading-[2] px-1">
                       {checkpoint.text}
                     </p>
                   </div>
@@ -130,7 +130,7 @@ export default function Roadmap() {
                     className={`w-6 h-6 ${checkpoint.dotColor} rounded-full shadow-lg ${checkpoint.dotShadow} ring-4 ring-slate-950 animate-dot-pulse`}
                   />
 
-                  <div className="mt-3">
+                  <div className="mt-6">
                     <span
                       className={`text-xs font-bold tracking-wider ${checkpoint.textColor}`}
                     >

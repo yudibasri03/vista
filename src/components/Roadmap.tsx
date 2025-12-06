@@ -2,33 +2,27 @@ export default function Roadmap() {
   const tradersJourney = [
     {
       id: 1,
-      topLabel: "Build",
-      topTitle: "Coaching",
-      topText: "Belajar di Vista Academy dan temukan metode trading milik kamu sendiri.",
-      bottomTitle: "Saving",
-      bottomText: "Mulai menabung dan kelola keuangan dengan baik untuk modal trading.",
+      date: "Build",
+      title: "Belajar di Vista Academy",
+      text: "Belajar di Vista Academy dan temukan metode trading milik kamu sendiri.",
       dotColor: "bg-blue-400",
       dotShadow: "shadow-blue-500/40",
       textColor: "text-blue-300",
     },
     {
       id: 2,
-      topLabel: "Prove",
-      topTitle: "Investment",
-      topText: "Uji metode tradingmu dan investasikan waktu untuk membangun disiplin.",
-      bottomTitle: "Management",
-      bottomText: "Kelola portofolio dan risk management dengan strategi yang terukur.",
+      date: "Prove",
+      title: "Program Tantangan",
+      text: "Uji metode tradingmu, bangun disiplin, dan percaya strategi adalah metode terbaik.",
       dotColor: "bg-cyan-400",
       dotShadow: "shadow-cyan-500/40",
       textColor: "text-cyan-300",
     },
     {
       id: 3,
-      topLabel: "Grow",
-      topTitle: "Professional",
-      topText: "Menjadi trader profesional dengan track record yang konsisten.",
-      bottomTitle: "Growth",
-      bottomText: "Kembangkan portofolio dan tingkatkan profit secara berkelanjutan.",
+      date: "Grow",
+      title: "Trader Professional",
+      text: "Menjadi trader profesional dan memiliki portofolio yang terukur.",
       dotColor: "bg-green-400",
       dotShadow: "shadow-green-500/40",
       textColor: "text-green-300",
@@ -38,33 +32,27 @@ export default function Roadmap() {
   const investorsJourney = [
     {
       id: 1,
-      topLabel: "Plan",
-      topTitle: "Strategy",
-      topText: "Petakan arah diversifikasimu sebagai investor yang cerdas.",
-      bottomTitle: "Portfolio",
-      bottomText: "Bangun portfolio yang seimbang dengan berbagai instrumen investasi.",
+      date: "Plan",
+      title: "Petakan Diversifikasi",
+      text: "Petakan arah diversifikasimu sebagai investor yang cerdas.",
       dotColor: "bg-amber-400",
       dotShadow: "shadow-amber-500/40",
       textColor: "text-amber-300",
     },
     {
       id: 2,
-      topLabel: "Diversify",
-      topTitle: "VIP Group",
-      topText: "Mulai dari VIP Group Signal dan pelajari strategi dari expert.",
-      bottomTitle: "Algo ATM",
-      bottomText: "Lanjutkan diversifikasi melalui Algo ATM untuk passive income.",
+      date: "Diversify",
+      title: "VIP Group & Algo ATM",
+      text: "Mulai dari VIP Group Signal, lanjutkan diversifikasi melalui Algo ATM.",
       dotColor: "bg-orange-400",
       dotShadow: "shadow-orange-500/40",
       textColor: "text-orange-300",
     },
     {
       id: 3,
-      topLabel: "Optimize",
-      topTitle: "Smart Investor",
-      topText: "Optimalkan return dengan kombinasi signal trading dan algoritma.",
-      bottomTitle: "Wealth",
-      bottomText: "Capai kebebasan finansial dengan portofolio yang terdiversifikasi.",
+      date: "Optimize",
+      title: "Smart Investor",
+      text: "Menjadi smart investor dengan portofolio diversifikasi dari team trader dan algo trading.",
       dotColor: "bg-pink-400",
       dotShadow: "shadow-pink-500/40",
       textColor: "text-pink-300",
@@ -80,7 +68,7 @@ export default function Roadmap() {
   label: string;
   isTraders: boolean;
 }) => (
-  <div className="mb-32">
+  <div className="mb-24">
     {/* DESKTOP VIEW */}
     <div className="hidden lg:flex items-center gap-8">
       <div className="flex-shrink-0 w-32 text-right">
@@ -96,42 +84,31 @@ export default function Roadmap() {
           }`}
         />
 
-        <div className="relative flex justify-between px-4">
+        <div className="relative flex justify-between px-2">
           {journey.map((checkpoint) => (
             <div
               key={checkpoint.id}
-              className="flex flex-col items-center text-center relative"
-              style={{ width: 'calc(100% / 3)', maxWidth: '280px' }}
+              className="flex flex-col items-center w-1/3 text-center"
             >
-              {/* TOP SECTION */}
-              <div className="mb-6 max-w-[200px]">
-                <h4 className="text-lg font-bold text-white mb-2">
-                  {checkpoint.topTitle}
+              <div className="mb-10 min-h-[80px] flex flex-col justify-end">
+                <h4 className="text-sm font-semibold text-gray-200 mb-1">
+                  {checkpoint.title}
                 </h4>
-                <p className="text-xs text-gray-400 leading-relaxed">
-                  {checkpoint.topText}
+                <p className="text-xs text-gray-400 leading-relaxed px-2">
+                  {checkpoint.text}
                 </p>
               </div>
 
-              {/* Vertical Line from top */}
-              <div className={`w-0.5 h-20 ${checkpoint.dotColor} mb-3`} />
-
-              {/* Dot on horizontal line */}
               <div
-                className={`w-7 h-7 ${checkpoint.dotColor} rounded-full shadow-lg ${checkpoint.dotShadow} ring-4 ring-slate-950 animate-dot-pulse z-10`}
+                className={`w-6 h-6 ${checkpoint.dotColor} rounded-full shadow-lg ${checkpoint.dotShadow} ring-4 ring-slate-950 animate-dot-pulse`}
               />
 
-              {/* Vertical Line to bottom */}
-              <div className={`w-0.5 h-20 ${checkpoint.dotColor} mt-3 mb-6`} />
-
-              {/* BOTTOM SECTION */}
-              <div className="max-w-[200px]">
-                <h4 className="text-lg font-bold text-white mb-2">
-                  {checkpoint.bottomTitle}
-                </h4>
-                <p className="text-xs text-gray-400 leading-relaxed">
-                  {checkpoint.bottomText}
-                </p>
+              <div className="mt-3">
+                <span
+                  className={`text-xs font-bold tracking-wider ${checkpoint.textColor}`}
+                >
+                  {checkpoint.date}
+                </span>
               </div>
             </div>
           ))}
@@ -155,7 +132,7 @@ export default function Roadmap() {
 
         {/* Checkpoints */}
         <div className="space-y-12">
-          {journey.map((checkpoint) => (
+          {journey.map((checkpoint, index) => (
             <div key={checkpoint.id} className="relative">
               {/* Dot */}
               <div
@@ -167,19 +144,13 @@ export default function Roadmap() {
                 <span
                   className={`inline-block text-xs font-bold tracking-wider ${checkpoint.textColor} mb-2`}
                 >
-                  {checkpoint.topLabel}
+                  {checkpoint.date}
                 </span>
                 <h4 className="text-lg font-semibold text-gray-200 mb-2">
-                  {checkpoint.topTitle}
-                </h4>
-                <p className="text-sm text-gray-400 leading-relaxed mb-4">
-                  {checkpoint.topText}
-                </p>
-                <h4 className="text-lg font-semibold text-gray-200 mb-2">
-                  {checkpoint.bottomTitle}
+                  {checkpoint.title}
                 </h4>
                 <p className="text-sm text-gray-400 leading-relaxed">
-                  {checkpoint.bottomText}
+                  {checkpoint.text}
                 </p>
               </div>
             </div>
@@ -191,7 +162,7 @@ export default function Roadmap() {
 );
 
   return (
-    <section className="relative py-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
+    <section className="relative py-24 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
 
       <div className="absolute top-1/4 left-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>

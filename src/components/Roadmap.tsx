@@ -85,63 +85,69 @@ export default function Roadmap() {
         />
 
         <div className="relative flex justify-between px-4">
-          {journey.map((checkpoint) => (
-            <div
-              key={checkpoint.id}
-              className="flex flex-col items-center text-center"
-              style={{ width: 'calc(100% / 3)', maxWidth: '280px' }}
-            >
-              {checkpoint.id === 2 ? (
-                // MIDDLE CHECKPOINT - Dot di atas, text di bawah
-                <>
-                  <div className="mb-6">
-                    <span
-                      className={`text-xs font-bold tracking-wider ${checkpoint.textColor}`}
-                    >
-                      {checkpoint.date}
-                    </span>
-                  </div>
+          {journey.map((checkpoint, index) => {
+            const isTop = index % 2 === 0; // 0, 2 = top; 1 = bottom
 
-                  <div
-                    className={`w-6 h-6 ${checkpoint.dotColor} rounded-full shadow-lg ${checkpoint.dotShadow} ring-4 ring-slate-950 animate-dot-pulse`}
-                  />
+            return (
+              <div
+                key={checkpoint.id}
+                className="flex flex-col items-center text-center relative"
+                style={{ width: 'calc(100% / 3)', maxWidth: '280px' }}
+              >
+                {isTop ? (
+                  // TEXT DI ATAS
+                  <>
+                    <div className="mb-8 max-w-[180px]">
+                      <span
+                        className={`text-xs font-bold tracking-wider block mb-3 ${checkpoint.textColor}`}
+                      >
+                        {checkpoint.date}
+                      </span>
+                      <h4 className="text-sm font-semibold text-gray-200 mb-2">
+                        {checkpoint.title}
+                      </h4>
+                      <p className="text-xs text-gray-400 leading-relaxed">
+                        {checkpoint.text}
+                      </p>
+                    </div>
 
-                  <div className="mt-28 max-w-[160px]">
-                    <h4 className="text-sm font-semibold text-gray-200 mb-3">
-                      {checkpoint.title}
-                    </h4>
-                    <p className="text-xs text-gray-400 leading-[2]">
-                      {checkpoint.text}
-                    </p>
-                  </div>
-                </>
-              ) : (
-                // FIRST & LAST CHECKPOINT - Text di atas, dot di tengah
-                <>
-                  <div className="mb-20 min-h-[110px] flex flex-col justify-end max-w-[160px]">
-                    <h4 className="text-sm font-semibold text-gray-200 mb-3">
-                      {checkpoint.title}
-                    </h4>
-                    <p className="text-xs text-gray-400 leading-[2]">
-                      {checkpoint.text}
-                    </p>
-                  </div>
+                    {/* Vertical Line */}
+                    <div className={`w-0.5 h-16 ${checkpoint.dotColor} mb-3`} />
 
-                  <div
-                    className={`w-6 h-6 ${checkpoint.dotColor} rounded-full shadow-lg ${checkpoint.dotShadow} ring-4 ring-slate-950 animate-dot-pulse`}
-                  />
+                    {/* Dot */}
+                    <div
+                      className={`w-6 h-6 ${checkpoint.dotColor} rounded-full shadow-lg ${checkpoint.dotShadow} ring-4 ring-slate-950 animate-dot-pulse`}
+                    />
+                  </>
+                ) : (
+                  // TEXT DI BAWAH
+                  <>
+                    {/* Dot */}
+                    <div
+                      className={`w-6 h-6 ${checkpoint.dotColor} rounded-full shadow-lg ${checkpoint.dotShadow} ring-4 ring-slate-950 animate-dot-pulse`}
+                    />
 
-                  <div className="mt-8">
-                    <span
-                      className={`text-xs font-bold tracking-wider ${checkpoint.textColor}`}
-                    >
-                      {checkpoint.date}
-                    </span>
-                  </div>
-                </>
-              )}
-            </div>
-          ))}
+                    {/* Vertical Line */}
+                    <div className={`w-0.5 h-16 ${checkpoint.dotColor} mt-3 mb-8`} />
+
+                    <div className="max-w-[180px]">
+                      <span
+                        className={`text-xs font-bold tracking-wider block mb-3 ${checkpoint.textColor}`}
+                      >
+                        {checkpoint.date}
+                      </span>
+                      <h4 className="text-sm font-semibold text-gray-200 mb-2">
+                        {checkpoint.title}
+                      </h4>
+                      <p className="text-xs text-gray-400 leading-relaxed">
+                        {checkpoint.text}
+                      </p>
+                    </div>
+                  </>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

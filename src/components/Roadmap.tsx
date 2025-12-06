@@ -2,33 +2,33 @@ export default function Roadmap() {
   const tradersJourney = [
     {
       id: 1,
-      topLabel: "Build",
+      label: "Build",
       topTitle: "Coaching",
-      topText: "Belajar di Vista Academy dan temukan metode trading milik kamu sendiri.",
+      topText: "This is a sample text. Insert your desired text. This is a sample text.",
       bottomTitle: "Saving",
-      bottomText: "Mulai menabung dan kelola keuangan dengan baik untuk modal trading.",
+      bottomText: "This is a sample text. Insert your desired text. This is a sample text.",
       dotColor: "bg-blue-400",
       dotShadow: "shadow-blue-500/40",
       textColor: "text-blue-300",
     },
     {
       id: 2,
-      topLabel: "Prove",
+      label: "Prove",
       topTitle: "Investment",
-      topText: "Uji metode tradingmu dan investasikan waktu untuk membangun disiplin.",
+      topText: "This is a sample text. Insert your desired text. This is a sample text.",
       bottomTitle: "Management",
-      bottomText: "Kelola portofolio dan risk management dengan strategi yang terukur.",
+      bottomText: "This is a sample text. Insert your desired text. This is a sample text.",
       dotColor: "bg-cyan-400",
       dotShadow: "shadow-cyan-500/40",
       textColor: "text-cyan-300",
     },
     {
       id: 3,
-      topLabel: "Grow",
+      label: "Grow",
       topTitle: "Professional",
-      topText: "Menjadi trader profesional dengan track record yang konsisten.",
+      topText: "This is a sample text. Insert your desired text. This is a sample text.",
       bottomTitle: "Growth",
-      bottomText: "Kembangkan portofolio dan tingkatkan profit secara berkelanjutan.",
+      bottomText: "This is a sample text. Insert your desired text. This is a sample text.",
       dotColor: "bg-green-400",
       dotShadow: "shadow-green-500/40",
       textColor: "text-green-300",
@@ -38,33 +38,33 @@ export default function Roadmap() {
   const investorsJourney = [
     {
       id: 1,
-      topLabel: "Plan",
+      label: "Plan",
       topTitle: "Strategy",
-      topText: "Petakan arah diversifikasimu sebagai investor yang cerdas.",
+      topText: "This is a sample text. Insert your desired text. This is a sample text.",
       bottomTitle: "Portfolio",
-      bottomText: "Bangun portfolio yang seimbang dengan berbagai instrumen investasi.",
+      bottomText: "This is a sample text. Insert your desired text. This is a sample text.",
       dotColor: "bg-amber-400",
       dotShadow: "shadow-amber-500/40",
       textColor: "text-amber-300",
     },
     {
       id: 2,
-      topLabel: "Diversify",
+      label: "Diversify",
       topTitle: "VIP Group",
-      topText: "Mulai dari VIP Group Signal dan pelajari strategi dari expert.",
+      topText: "This is a sample text. Insert your desired text. This is a sample text.",
       bottomTitle: "Algo ATM",
-      bottomText: "Lanjutkan diversifikasi melalui Algo ATM untuk passive income.",
+      bottomText: "This is a sample text. Insert your desired text. This is a sample text.",
       dotColor: "bg-orange-400",
       dotShadow: "shadow-orange-500/40",
       textColor: "text-orange-300",
     },
     {
       id: 3,
-      topLabel: "Optimize",
+      label: "Optimize",
       topTitle: "Smart Investor",
-      topText: "Optimalkan return dengan kombinasi signal trading dan algoritma.",
+      topText: "This is a sample text. Insert your desired text. This is a sample text.",
       bottomTitle: "Wealth",
-      bottomText: "Capai kebebasan finansial dengan portofolio yang terdiversifikasi.",
+      bottomText: "This is a sample text. Insert your desired text. This is a sample text.",
       dotColor: "bg-pink-400",
       dotShadow: "shadow-pink-500/40",
       textColor: "text-pink-300",
@@ -104,8 +104,8 @@ export default function Roadmap() {
               style={{ width: 'calc(100% / 3)', maxWidth: '280px' }}
             >
               {/* TOP SECTION */}
-              <div className="mb-6 max-w-[200px]">
-                <h4 className="text-lg font-bold text-white mb-2">
+              <div className="mb-12 max-w-[200px]">
+                <h4 className="text-lg font-bold text-white mb-3">
                   {checkpoint.topTitle}
                 </h4>
                 <p className="text-xs text-gray-400 leading-relaxed">
@@ -113,20 +113,14 @@ export default function Roadmap() {
                 </p>
               </div>
 
-              {/* Vertical Line from top */}
-              <div className={`w-0.5 h-20 ${checkpoint.dotColor} mb-3`} />
-
               {/* Dot on horizontal line */}
               <div
                 className={`w-7 h-7 ${checkpoint.dotColor} rounded-full shadow-lg ${checkpoint.dotShadow} ring-4 ring-slate-950 animate-dot-pulse z-10`}
               />
 
-              {/* Vertical Line to bottom */}
-              <div className={`w-0.5 h-20 ${checkpoint.dotColor} mt-3 mb-6`} />
-
               {/* BOTTOM SECTION */}
-              <div className="max-w-[200px]">
-                <h4 className="text-lg font-bold text-white mb-2">
+              <div className="mt-12 max-w-[200px]">
+                <h4 className="text-lg font-bold text-white mb-3">
                   {checkpoint.bottomTitle}
                 </h4>
                 <p className="text-xs text-gray-400 leading-relaxed">
@@ -167,7 +161,7 @@ export default function Roadmap() {
                 <span
                   className={`inline-block text-xs font-bold tracking-wider ${checkpoint.textColor} mb-2`}
                 >
-                  {checkpoint.topLabel}
+                  {checkpoint.label}
                 </span>
                 <h4 className="text-lg font-semibold text-gray-200 mb-2">
                   {checkpoint.topTitle}

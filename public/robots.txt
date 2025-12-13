@@ -1,0 +1,29 @@
+# robots.txt for Vista Trading
+# https://produk.govista.co.id/
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://produk.govista.co.id/sitemap.xml
+
+# Google-specific crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Yandex
+User-agent: Yandex
+Allow: /
+
+# Crawl-delay for general bots (optional, adjust as needed)
+Crawl-delay: 1
